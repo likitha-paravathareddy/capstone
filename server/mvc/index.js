@@ -24,9 +24,9 @@ const departmentRoutes = require('./routes/department')
 
 app.use('/department', departmentRoutes)
 
-const subjectCodeRoutes = require('./routes/subjectCodes')
+const coursesRoutes = require('./routes/courses')
 
-app.use('/subjectCodes', subjectCodeRoutes)
+app.use('/courses', coursesRoutes)
 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/faculty", require("./routes/facultyRoutes"));
