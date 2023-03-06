@@ -20,13 +20,13 @@ const resultRoutes = require('./routes/results.js')
 
 app.use('/result', resultRoutes)
 
-const branchCodeRoutes = require('./routes/branchCodes')
+const departmentRoutes = require('./routes/department')
 
-app.use('/branchCodes', branchCodeRoutes)
+app.use('/department', departmentRoutes)
 
-const subjectCodeRoutes = require('./routes/subjectCodes')
+const coursesRoutes = require('./routes/courses')
 
-app.use('/subjectCodes', subjectCodeRoutes)
+app.use('/courses', coursesRoutes)
 
 
 
