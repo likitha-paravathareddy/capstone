@@ -51,7 +51,62 @@ const registerFaculty = asyncHandler(async (req, res) => {
     });
   
     console.log(`User created ${faculty}`);
+    const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+//OAuth2 configuration
+const oauth2Client = new OAuth2(
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    "https://developers.google.com/oauthplayground"   
+);
 
+console.log(oauth2Client)
+oauth2Client.setCredentials({
+    refresh_token: process.env.REFRESH_TOKEN
+});
+const accessToken = oauth2Client.getAccessToken((err,token) => {
+    if(err) {
+       return
+    } else {
+       return token;
+    }
+});
+const authObject = {
+    service: "gmail",
+    auth: {
+        type: "OAuth2",
+        user: process.env.MAIL_ID,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN,
+        accessToken: accessToken
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+}
+ 
+//Handles the User SignUp part
+const nodemailer=require("nodemailer")
+
+                const smtpTransport = nodemailer.createTransport(authObject);
+                console.log(smtpTransport)
+                const mailOptions = {
+                    from: process.env.MAIL_ID,
+                    to: email,
+                    subject: "Eventz: Confirm Account",
+                    text: "Hi "+name+" here is your credentials."+"\n"+"Username: "+facultyId+" \n"+"password: "+facultyId,
+                };
+                console.log(mailOptions)
+ 
+                smtpTransport.sendMail(mailOptions,function(err,data){
+                  if (err) {
+                    console.log("Error " + err);
+                  } else {
+                    console.log("Email sent successfully");
+                  }
+
+                });
                 res.send("Ok")
 
   });
