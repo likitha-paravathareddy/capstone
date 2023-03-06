@@ -28,7 +28,17 @@ const coursesRoutes = require('./routes/courses')
 
 app.use('/courses', coursesRoutes)
 
+const timetableRoutes = require('./routes/timetable')
 
+app.use('/timetables', timetableRoutes)
+
+const stutimetableRoutes = require('./routes/stutimetable')
+
+app.use('/stutimetables', stutimetableRoutes)
+
+const teachtimetableRoutes = require('./routes/teachtimetable')
+
+app.use('/teachtimetables', teachtimetableRoutes)
 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/faculty", require("./routes/facultyRoutes"));
