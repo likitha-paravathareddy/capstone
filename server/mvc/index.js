@@ -28,66 +28,68 @@ const subjectCodeRoutes = require('./routes/subjectCodes')
 
 app.use('/subjectCodes', subjectCodeRoutes)
 
+
+
 app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/faculty", require("./routes/facultyRoutes"));
+app.use("/faculty", require("./routes/facultyRoutes"));
 app.use(errorHandler);
 const { validationResult } = require("express-validator");
 
  
-const { google } = require("googleapis");
-const OAuth2 = google.auth.OAuth2;
+// const { google } = require("googleapis");
+// const OAuth2 = google.auth.OAuth2;
  
-//OAuth2 configuration
-const oauth2Client = new OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    "https://developers.google.com/oauthplayground"   
-);
-oauth2Client.setCredentials({
-    refresh_token: process.env.REFRESH_TOKEN
-});
-const accessToken = oauth2Client.getAccessToken((err,token) => {
-    if(err) {
-       return
-    } else {
-       return token;
-    }
-});
+// //OAuth2 configuration
+// const oauth2Client = new OAuth2(
+//     process.env.CLIENT_ID,
+//     process.env.CLIENT_SECRET,
+//     "https://developers.google.com/oauthplayground"   
+// );
+// oauth2Client.setCredentials({
+//     refresh_token: process.env.REFRESH_TOKEN
+// });
+// const accessToken = oauth2Client.getAccessToken((err,token) => {
+//     if(err) {
+//        return
+//     } else {
+//        return token;
+//     }
+// });
  
-const authObject = {
-    service: "gmail",
-    auth: {
-        type: "OAuth2",
-        user: process.env.MAIL_ID,
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN,
-        accessToken: accessToken
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-}
+// const authObject = {
+//     service: "gmail",
+//     auth: {
+//         type: "OAuth2",
+//         user: process.env.MAIL_ID,
+//         clientId: process.env.CLIENT_ID,
+//         clientSecret: process.env.CLIENT_SECRET,
+//         refreshToken: process.env.REFRESH_TOKEN,
+//         accessToken: accessToken
+//     },
+//     tls: {
+//         rejectUnauthorized: false
+//     }
+// }
  
-//Handles the User SignUp part
+// //Handles the User SignUp part
 
-                const smtpTransport = nodemailer.createTransport(authObject);
-                const mailOptions = {
-                    from: process.env.MAIL_ID,
-                    to: "reddylikitha201@gmail.com",
-                    subject: "Eventz: Confirm Account",
-                    text: "Hi Likitha Here is your credentials",
+//                 const smtpTransport = nodemailer.createTransport(authObject);
+//                 const mailOptions = {
+//                     from: process.env.MAIL_ID,
+//                     to: "reddylikitha201@gmail.com",
+//                     subject: "Eventz: Confirm Account",
+//                     text: "Hi Likitha Here is your credentials",
            
-                };
+//                 };
  
-                smtpTransport.sendMail(mailOptions,function(err,data){
-                  if (err) {
-                    console.log("Error " + err);
-                  } else {
-                    console.log("Email sent successfully");
-                  }
+//                 smtpTransport.sendMail(mailOptions,function(err,data){
+//                   if (err) {
+//                     console.log("Error " + err);
+//                   } else {
+//                     console.log("Email sent successfully");
+//                   }
 
-                });
+//                 });
             
 
 //const nodemailer = require('nodemailer');

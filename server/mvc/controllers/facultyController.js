@@ -4,45 +4,56 @@ const jwt = require("jsonwebtoken");
 const Faculty = require("../models/facultyModel");
 
 let branchcodes={
-  cse:505,
-  ece:506,
-  eee:507,
-  mech:508,
-  civil:509,
-  it:510
+  "cse":505,
+  "ece":506,
+  "eee":507,
+  "mech":508,
+  "civil":509,
+  "it":510
 }
 
 const registerFaculty = asyncHandler(async (req, res) => {
-    const { facultyId, email, password, userName } = req.body;
+    const { name,email, branch,courses } = req.body;
     console.log(req.body)
-    if (!userName || !email || !password || !facultyId) {
+    if (!branch || !email || !courses || !name) {
       res.status(400);
       throw new Error("All fields are mandatory!");
     }
-    const facultyAvailable = await Faculty.findOne({ facultyId });
+
+    console.log(name)
+    const facultyAvailable = await Faculty.findOne({ email });
     if (facultyAvailable) {
       res.status(400);
       throw new Error("User already registered!");
     }
-  
-    //Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    var branc=branchcodes[branch]
+    monday=[0,0,0,0,0,0]
+    tuesday=[0,0,0,0,0,0]
+    wednesday=[0,0,0,0,0,0]
+    thursday=[0,0,0,0,0,0]
+    friday=[0,0,0,0,0,0]
+    const facultyId=branc.toString()+(branc+Math.floor(100+Math.random()*900)).toString()
+    console.log(facultyId)
+    const hashedPassword = await bcrypt.hash(facultyId, 10);
     console.log("Hashed Password: ", hashedPassword);
     const faculty = await Faculty.create({
-      facultyId,
+      facultyId:facultyId,
+      facultyName:name,
       email,
       password: hashedPassword,
-      userName,
+      branch,
+      courses,
+      monday:monday,
+      tuesday:tuesday,
+      wednesday:wednesday,
+      thursday:thursday,
+      friday:friday
     });
   
     console.log(`User created ${faculty}`);
-    if (faculty) {
-      res.status(201).json({ _id: faculty.id, email: faculty.email });
-    } else {
-      res.status(400);
-      throw new Error("User data us not valid");
-    }
-    res.json({ message: "Register the faculty" });
+
+                res.send("Ok")
+
   });
 
 

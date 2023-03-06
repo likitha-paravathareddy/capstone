@@ -5,9 +5,13 @@ const facultySchema = mongoose.Schema(
   {
 
     facultyId: {
-      type: Number,
+      type: String,
       required: [true, "Please add the RollNo"],
-      unique: [true, "rollno already exist"]
+      unique: [true, "rollno already exist"],
+    },
+    facultyName:{
+      type:String,
+      required: [true, "Please add the faculty name"],
     },
     email: {
       type: String,
@@ -18,14 +22,39 @@ const facultySchema = mongoose.Schema(
       type: String,
       required: [true, "Please add the user password"],
     },
-    userName: {
-      type: String,
+    branch:{
+      type:String,
+      required: [true, "Please add branch"],
+    },
+    courses: {
+      type: Array,
+      default:[],
       required: [true, "Please add the user email address"],
     },
+    monday:{
+      type:Array,
+      default:[0,0,0,0,0,0]
+    },
+    tuesday:{
+      type:Array,
+      default:[0,0,0,0,0,0]
+    },
+    wednesday:{
+      type:Array,
+      default:[0,0,0,0,0,0]
+    },
+    thursday:{
+      type:Array,
+      default:[0,0,0,0,0,0]
+    },
+    friday:{
+      type:Array,
+      default:[0,0,0,0,0,0]
+    }
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Faculty", facultySchema);
+module.exports = mongoose.model("Faculties", facultySchema);
