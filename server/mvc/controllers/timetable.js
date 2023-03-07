@@ -13,7 +13,7 @@ async function timetableRegistrationController(req,res){
                     res.send("something went wrong")
                 }
                 else {
-                    res.send("place added succesfully")
+                    res.send("stuimetable added succesfully")
                 }
             })
         

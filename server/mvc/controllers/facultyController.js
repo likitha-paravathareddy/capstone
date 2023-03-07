@@ -15,6 +15,10 @@ let branchcodes={
 const registerFaculty = asyncHandler(async (req, res) => {
     const { name,email, branch,courses } = req.body;
     console.log(req.body)
+    console.log(name)
+    console.log(email)
+    console.log(branch)
+    console.log(courses)
     if (!branch || !email || !courses || !name) {
       res.status(400);
       throw new Error("All fields are mandatory!");
@@ -140,5 +144,10 @@ const nodemailer=require("nodemailer")
     }
   });
 
+  async function getFaculty(req,res){
+    const faculty = await Faculty.find({ });
+    res.send(faculty)
 
-  module.exports = { registerFaculty, loginFaculty };
+}
+
+  module.exports = { registerFaculty, loginFaculty ,getFaculty};
