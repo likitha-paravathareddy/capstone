@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const coursesModelCtrl=require('../models/coursesModel')
 const Faculty = require("../models/facultyModel");
 
 let branchcodes={
@@ -15,10 +16,6 @@ let branchcodes={
 const registerFaculty = asyncHandler(async (req, res) => {
     const { name,email, branch,courses } = req.body;
     console.log(req.body)
-    console.log(name)
-    console.log(email)
-    console.log(branch)
-    console.log(courses)
     if (!branch || !email || !courses || !name) {
       res.status(400);
       throw new Error("All fields are mandatory!");
@@ -53,6 +50,16 @@ const registerFaculty = asyncHandler(async (req, res) => {
       thursday:thursday,
       friday:friday
     });
+
+    for(let j=0;j<courses.length;j++)
+    {
+         course_name=courses[j]
+         console.log(course_name,name)
+         let data = await coursesModelCtrl.coursesModel.updateOne({courseName:course_name},{$set:{assignedTeachers:name}});
+         console.log(data);
+          
+
+    }
   
     console.log(`User created ${faculty}`);
     const { google } = require("googleapis");

@@ -12,14 +12,23 @@ const coursesSchema=mongoose.Schema({
     },
    curriculum:
    {
-    type: [String]
+    type: Array,
+    default:[]
    },
    assignedTeachers:
    {
-    type: [String]
+    type: String
+   },
+   link:{
+    type:Array,
+    default:[]
+   },
+   notes:{
+    type:Array,
+    default:[]
    }
 
 })
 
 let coursesModel=mongoose.model('course',coursesSchema)
-module.exports={ coursesModel }
+module.exports={coursesModel}
