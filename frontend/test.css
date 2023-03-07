@@ -1,0 +1,13 @@
+/* Set a max-width for the table so it doesn't overflow on small screens */
+table {
+    max-width: 100%;
+  }
+  
+  /* Style the table header */
+  thead {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  /* Style the table cells */
+  
