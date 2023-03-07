@@ -26,7 +26,7 @@ $("#sub1").click(() => {
      console.log(data);
       for (i = 0; i < data.length; i++) {
         console.log("hello")
-        if(semester==sem)
+        if(data[i].semester==sem)
         //console.log(semester)
         {
         templateString =
