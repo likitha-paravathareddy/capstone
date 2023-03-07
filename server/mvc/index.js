@@ -6,6 +6,7 @@ const errorHandler = require("./middleWares/errorHandler");
 const path=require('path')
 const dotenv = require("dotenv").config();
 const nodemailer=require("nodemailer")
+app.use(cors())
 app.use(express.json());
 
 app.get('/',(req,res)=>{
