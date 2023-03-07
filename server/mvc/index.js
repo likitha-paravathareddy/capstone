@@ -7,6 +7,7 @@ const path=require('path')
 const dotenv = require("dotenv").config();
 const nodemailer=require("nodemailer")
 app.use(express.json());
+app.use(cors())
 
 app.get('/',(req,res)=>{
   res.send("Hello world")
