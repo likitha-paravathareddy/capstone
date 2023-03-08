@@ -31,9 +31,9 @@ logn.addEventListener("click", () => {
         headers: {},
         success: function (res) {
             console.log("hello")
-            localStorage.setItem("student", res.user.studentId);
+            localStorage.setItem("student", JSON.stringify(res.user));
             localStorage.setItem("token", res.token);
-            window.location.href="index.html"
+            window.open("student_dashboard.html")
         },
         error: function () {
           console.log(

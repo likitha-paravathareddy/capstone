@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+    <title>view attendance</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
     <!-- Fonts CSS -->
@@ -18,7 +18,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-    <link rel = "stylesheet" href = "courses.css"
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -202,82 +201,89 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h1 class="page-title">Let's start</h1>
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row" id = "cards">
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Blue Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Green Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Yellow Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Brown Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Purple Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Orange Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+              <h1 class="page-title">View Attendance</h1>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <h4 class="card-title">Total Present Days</h4>
+                      <h4>160</h4>
+                      <p>12 days remaining</p>
+                    </div>
+                  </div>
                 </div>
+                <div class="col-md-6 mb-4">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <h4 class="card-title">Attendance Percentage</h4>
+                      <h4>75%</h4>
+                      <p>you have adequate attendance improve more</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+
+
+
+
+
+
+              <table class="table datatables" id="dataTable-1">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Lesson 1</th>
+                            <th>Lesson 2</th>
+                            <th>Lesson 3</th>
+                            <th>Lesson 4</th>
+                            <th>Lesson 5</th>
+                            <th>Lesson 6</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>01-03-2023</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                            <td>Absent</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                          </tr>
+                          <tr>
+                            <td>02-03-2023</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                            <td>Absent</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                          </tr>
+                          <tr>
+                            <td>03-03-2023</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                            <td>Absent</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                          </tr>
+                          <tr>
+                            <td>04-03-2023</td>
+                            <td>Absent</td>
+                            <td>Absent</td>
+                            <td>Present</td>
+                            <td>Absent</td>
+                            <td>Present</td>
+                            <td>Present</td>
+                          </tr>
+                          
+
+            </tbody>
+          </table>
+
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
@@ -415,8 +421,19 @@
     <script src='js/jquery.stickOnScroll.js'></script>
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
+    <script src='js/jquery.dataTables.min.js'></script>
+    <script src='js/dataTables.bootstrap4.min.js'></script>
+    <script>
+      $('#dataTable-1').DataTable(
+      {
+        autoWidth: true,
+        "lengthMenu": [
+          [16, 32, 64, -1],
+          [16, 32, 64, "All"]
+        ]
+      });
+    </script>
     <script src="js/apps.js"></script>
-    <script src="courses.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
