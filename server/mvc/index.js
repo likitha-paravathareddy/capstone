@@ -46,7 +46,13 @@ const studentRoutes = require('./routes/students')
 
 app.use('/students', studentRoutes)
 
+const paymentRoutes = require('./routes/payments')
 
+app.use('/payments', paymentRoutes)
+
+const mypaymentRoutes=require('./routes/mypayments')
+
+app.use('/mypayments',mypaymentRoutes)
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/faculty", require("./routes/facultyRoutes"));
 app.use(errorHandler);
