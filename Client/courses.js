@@ -85,12 +85,12 @@ $("documnet").ready(async function () {
                     '<div class="content">'+
                         '<h6 class="category">'+
                         '</h6>'+
-                        '<h4 class="title"><a href="courses.html#'+
+                        '<h4 class="title"><a href="curriculum.html#'+
                         data[i].courseName+
                         '">'+
                         data[i].courseName+
                         '</a></h4>'+
-                        '<p class="description"><a href = "courses.html#'+
+                        '<p class="description"><a href = "curriculum.html#'+
                         data[i].courseName+
                         '">'+
                         data[i].curriculum[0].substring(0, 100)+

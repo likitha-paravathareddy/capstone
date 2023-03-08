@@ -18,6 +18,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="student_registration.css">
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -202,6 +203,76 @@
           <div class="row justify-content-center">
             <div class="col-12">
               <h1 class="page-title">Let's start</h1>
+              <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+                <div class="container py-5 h-100">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-8 col-xl-6">
+                      <div class="card rounded-3">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                          class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                          alt="Sample photo">
+                        <div class="card-body p-4 p-md-5">
+                          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+              
+                          <form class="px-md-2">
+              
+                            <div class="form-outline mb-4">
+                              <input type="text" id="name" class="form-control" />
+                              <label class="form-label" for="form3Example1q">Name</label>
+                            </div>
+              
+                            <div class="row">
+                             
+                              <div class="col-md-6 mb-4">
+                                
+                                <select class="select" id = "branch">
+                                    <option selected>branch</option>
+                                  <option value="cse">cse</option>
+                                  <option value="it">it</option>
+                                  <option value="ece">ece</option>
+                                  <option value="eee">eee</option>
+                                </select>
+              
+                              </div>
+                            </div>
+              
+                            <div class="mb-4">
+              
+                              <select class="select" id = semester>
+                                <option selected>semester</option>
+                                <option value="semester1">sem 1</option>
+                                <option value="semester2">sem 2</option>
+                                <option value="semester3">sem 3</option>
+                                <option value="semester4">sem 4</option>
+                                <option value="semester5">sem 5</option>
+                                <option value="semester6">sem 6</option>
+                                <option value="semester7">sem 7</option>
+                                <option value="semester8">sem 8</option>
+                              </select>
+              
+                            </div>
+              
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                              <div class="col-md-6">
+              
+                                <div class="form-outline">
+                                  <input type="text" id="email" class="form-control" />
+                                  <label class="form-label" for="email">email</label>
+                                </div>
+              
+                              </div>
+                            </div>
+              
+                            <button type="button" id="register" class="btn btn-success btn-lg mb-1">Submit</button>
+              
+                          </form>
+              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
@@ -340,6 +411,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
+    <script src="student_registration.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
