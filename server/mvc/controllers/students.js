@@ -1,5 +1,7 @@
 const studentModelCtrl=require('../models/studentModel')
+const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 async function studentRegistrationController(req,res){
     let branchcodes={
         "cse":505,
@@ -102,4 +104,35 @@ async function studentDataFetching(req,res){
 
 }
 
-module.exports={ studentRegistrationController , studentDataFetching}
+
+const loginUser = asyncHandler(async (req, res) => {
+    const { studentId, password } = req.body;
+    if (!studentId || !password) {
+      res.status(400);
+      throw new Error("All fields are mandatory!");
+    }
+    const user = await studentModelCtrl.studentModel.findOne({ studentId });
+    console.log(user)
+    //compare password with hashedpassword
+    if (user && (await bcrypt.compare(password, user.password))) {
+      const accessToken = jwt.sign(
+        {
+          user: {
+            username: user.username,
+            email: user.email,
+            studentId: user.studentId,
+            semester: user.semester,
+            branch: user.branch
+          },
+        },
+        process.env.ACCESS_TOKEN_SECERT,
+        { expiresIn: "15m" }
+      );
+      res.send({"Message":"Login Successfull",user:user,token:accessToken});
+    } else {
+      res.status(401);
+      throw new Error("email or password is not valid");
+    }
+  });
+
+module.exports={ studentRegistrationController , loginUser, studentDataFetching}
