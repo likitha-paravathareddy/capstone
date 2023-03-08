@@ -5,6 +5,9 @@ $("documnet").ready(async function () {
         }
     });
     console.log("hello")
+    branch=JSON.parse(localStorage.getItem("student")).branch;
+    semester = JSON.parse(localStorage.getItem("student")).semester;
+    console.log(branch)
 
 
     var sub
@@ -16,9 +19,9 @@ $("documnet").ready(async function () {
         {
             console.log("bye")
             //console.log(data[0])
-            if(data[i].departmentName == 'cse')
+            if(data[i].departmentName == branch)
             {
-            sub = data[i].semester1
+            sub = data[i][semester];
             }
         }
 
@@ -60,8 +63,8 @@ $("documnet").ready(async function () {
         {
             course = data[i].courseName
             num = sub.indexOf(course)
-            console.log(colors[i])
-            console.log(data[0])
+           // console.log(colors[i])
+            //console.log(data[0])
             //curriculum
             console.log( data[0].curriculum[0])
           if(num>0)
