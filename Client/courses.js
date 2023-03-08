@@ -21,7 +21,9 @@ $("documnet").ready(async function () {
             //console.log(data[0])
             if(data[i].departmentName == branch)
             {
+               // console.log(data)
             sub = data[i][semester];
+            
             }
         }
 
@@ -51,28 +53,34 @@ $("documnet").ready(async function () {
         //   parent.innerHTML = parent.innerHTML + templateString;
         // }
       });
+      console.log("ghsaku")
       console.log(sub)
      // card = document.getElementById("cards")
       await $.get("http://localhost:8080/courses/reg", function (data) {
         
         //console.log(data)
         //console.log("hey")
-        var colors = ["blue", "green", " yellow", "brown", "purple","orange"]
+        var colors = ["blue", "green", "yellow", "brown", "purple","orange"]
         //console.log(colors[0])
+        x =0;
         for(i=0;i<data.length;i++)
         {
             course = data[i].courseName
+            //console.log(course)
             num = sub.indexOf(course)
            // console.log(colors[i])
             //console.log(data[0])
             //curriculum
-            console.log( data[0].curriculum[0])
-          if(num>0)
+            //console.log( data[0].curriculum[0])
+           
+          if(num>=0)
           {
+            
+            console.log(course)
             templateString = '<div class="col-md-4 col-sm-6 content-card">'+
             '<div class="card-big-shadow">'+
                 '<div class="card card-just-text" data-background="color" data-color='+
-                colors[i]+
+                colors[x]+
                 ' data-radius="none">'+
                     '<div class="content">'+
                         '<h6 class="category">'+
@@ -91,6 +99,7 @@ $("documnet").ready(async function () {
                 '</div>'+
             '</div>'+
         '</div>';
+        x++;
             
         $("#cards").append(templateString);
           }

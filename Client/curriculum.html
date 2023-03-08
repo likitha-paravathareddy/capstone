@@ -18,7 +18,10 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-    <link rel = "stylesheet" href = "courses.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="test1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -97,7 +100,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./timetable"><span class="ml-1 item-text">timetable</span>
+                  <a class="nav-link pl-3" href="student_timetable.html"><span class="ml-1 item-text">timetable</span>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -203,81 +206,190 @@
           <div class="row justify-content-center">
             <div class="col-12">
               <h1 class="page-title">Let's start</h1>
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row" id = "cards">
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Blue Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Green Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Yellow Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Brown Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
+              <div>
+                <div class="container yell">
+                    <div class="row padding">
+                      <div class="col-sm-6">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                          <!-- Indicators -->
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                          </ol>
+                          <!-- Wrapper for slides -->
+                          <div class="carousel-inner">
+                            <div class="item active">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pmIxqkbzwm8"></iframe>
+                              </div>
                             </div>
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Purple Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Orange Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
+                            <div class="item">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9rkInmyo_z8"></iframe>
+                              </div>
                             </div>
+                            <div class="item">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ld8c_sgpbUU"></iframe>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Left and right controls -->
+                          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
                         </div>
-                    </div> -->
-                </div>
-                </div>
+                      </div>
+                      <!-- Description column -->
+                      <div class="col-sm-6">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Mauris metus. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Morbi imperdiet, mauris ac auctor dictum, nisl ligula
+                          egestas nulla, et sollicitudin sem purus in lacus. Proin in tellus sit amet nibh dignissim sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <div class="row text-center">
+                      <div class="col-md-4 card-container">
+                        <div class="card card-flip">
+                          <div class="front card-block">
+                            <!-- To add FontAwesome Icons use Unicode characters and to set size use font-size instead of fa-*x because when calculating the height (see js), the size of the icon is not calculated if using classes -->
+                            <span class="card-img-top fa" style="font-size: 4em">&#xf118;</span>
+                            <h4 class="card-title">UNIT-1</h4>
+                            <!-- <h6 class="card-subtitle text-muted">Front Sub-title</h6>
+                            <p class="card-text">Front Text</p> -->
+                          </div>
+                          <div class="back card-block">
+                            <p>
+                                In view of the growing importance of English as a tool for global communication and the
+                                consequent emphasis on training students to acquire language skills, the syllabus of English has
+                                been designed to develop linguistic, communicative and critical thinking competencies of
+                                Engineering students.
+                                In English classes, the focus should be on the skill development in the areas of vocabulary,
+                                grammar, reading and writing. For this, the teachers should use the prescribed text for detailed
+                                study. The students should be encouraged to read the texts leading to reading comprehension and
+                                different passages may be given for practice in the class. The time should be utilized for working
+                                out the exercises given after each excerpt, and also for supplementing the exercises with
+                                authentic materials of a similar kind, for example, newspaper articles, advertisements,
+                                promotional material etc. The focus in this syllabus is on skill development, fostering ideas and
+                                practice of language skills in various contexts and cultures.
+                            </p>
+                           
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 card-container">
+                        <div class="card card-flip">
+                          <div class="front card-block">
+                            <span class="card-img-top fa" style="font-size: 4em">&#xf118;</span>
+                            <h4 class="card-title">Front Title</h4>
+                            <h6 class="card-subtitle text-muted">Front Sub-title</h6>
+                            <p class="card-text">Front Text</p>
+                          </div>
+                          <div class="back card-block">
+                            <p>Some example short text</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 card-container">
+                        <div class="card card-flip">
+                          <div class="front card-block">
+                            <span class="card-img-top fa" style="font-size: 4em">&#xf118;</span>
+                            <h4 class="card-title">Front Title</h4>
+                            <h6 class="card-subtitle text-muted">Front Sub-title</h6>
+                            <p class="card-text">Front Text</p>
+                          </div>
+                          <div class="back card-block">
+                            <p>Some example text</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 card-container">
+                        <div class="card card-flip">
+                          <div class="front card-block">
+                            <span class="card-img-top fa" style="font-size: 4em">&#xf118;</span>
+                            <h4 class="card-title">Front Title</h4>
+                            <h6 class="card-subtitle text-muted">Front Sub-title</h6>
+                            <p class="card-text">Front Text</p>
+                          </div>
+                          <div class="back card-block">
+                            <p>
+                              Some example text<br> to
+                              <br> increase
+                              <br> card
+                              <br> height
+                              <br> to
+                              <br> something
+                              <br> long
+                            </p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 card-container">
+                        <div class="card card-flip">
+                          <div class="front card-block">
+                            <span class="card-img-top fa" style="font-size: 4em">&#xf118;</span>
+                            <h4 class="card-title">Front Title</h4>
+                            <h6 class="card-subtitle text-muted">Front Sub-title</h6>
+                            <p class="card-text">Front Text</p>
+                          </div>
+                          <div class="back card-block">
+                            <p>Some example short text</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 card-container">
+                        <div class="card card-flip">
+                          <div class="front card-block">
+                            <span class="card-img-top fa" style="font-size: 4em">&#xf118;</span>
+                            <h4 class="card-title">Front Title</h4>
+                            <h6 class="card-subtitle text-muted">Front Sub-title</h6>
+                            <p class="card-text">Front Text</p>
+                          </div>
+                          <div class="back card-block">
+                            <p>Some example text</p>
+                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+                  <script>
+                    $(document).ready(function() {
+                  var front = document.getElementsByClassName("front");
+                  var back = document.getElementsByClassName("back");
+                
+                  var highest = 0;
+                  var absoluteSide = "";
+                
+                  for (var i = 0; i < front.length; i++) {
+                    if (front[i].offsetHeight > back[i].offsetHeight) {
+                      if (front[i].offsetHeight > highest) {
+                        highest = front[i].offsetHeight;
+                        absoluteSide = ".front";
+                      }
+                    } else if (back[i].offsetHeight > highest) {
+                      highest = back[i].offsetHeight;
+                      absoluteSide = ".back";
+                    }
+                  }
+                  $(".front").css("height", highest);
+                  $(".back").css("height", highest);
+                  $(absoluteSide).css("position", "absolute");
+                });
+                  </script>
+                  </div>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
@@ -416,10 +528,14 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
-    <script src="courses.js"></script>
+    <script src = "test1.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
+      
+                  
+      
+                 
       window.dataLayer = window.dataLayer || [];
 
       function gtag()
@@ -428,6 +544,7 @@
       }
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
+     
     </script>
   </body>
 </html>

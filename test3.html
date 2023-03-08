@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+   
+        <script src="http://tomtoy.us/js/masonry.pkgd.min.js"></script>
+        <link rel = "stylesheet" href = "test3.css">
+      
+      </head>
+      <body>
+      <div class="csstransforms3d1">
+          <div class="cards">
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+      
+             <div class="card">
+                 <div class="front">
+                   <h2></h2>
+                 </div>
+                 <div class="back">
+                     <h2></h2>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script>
+        		$(document).ready(function(){
+			
+			if($("div").hasClass("csstransforms3d")){
+				$('.card').hover(function(){
+					$(this).addClass('flip');
+				},function(){
+					$(this).removeClass('flip');
+				});
+			} else{
+				$('.card').hover(function(){
+					$(this).find(".front").animate({top: -190}, 'fast');
+				},function(){
+					$(this).find(".front").animate({top: 0}, 'fast');
+				});
+		 	}	
+ 
+	 		//masonry
+		 	var $container = $('.cards');
+			$container.masonry({
+  columnWidth: 60,
+			  itemSelector: '.card',
+			  isAnimated: true,
+			  animationOptions: { duration: 400 }
+			});
+ 
+		
+    });
+      </script>
+      </body>
+     </html>
+
+ 
