@@ -39,8 +39,7 @@ $(document).ready(function(){
            var date=Date.now()
             var paymenttype=feetype
             var amount=document.getElementById("amount").value
-            alert(amt)
-            alert(amount)
+        
             amt=amt-amount
             var dat={
                 studentId:studentId,
@@ -52,9 +51,9 @@ $(document).ready(function(){
                 amountpaid:amount,
                 amt:amt
             }
-            alert(dat)
+       
             dat=JSON.stringify(dat)
-            alert(dat)
+         
             var url="http://127.0.0.1:8080/mypayments/reg"
             $.ajaxSetup({
                 headers: {
