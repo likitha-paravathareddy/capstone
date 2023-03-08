@@ -6,7 +6,6 @@ routes.use(cors())
 app.use(cors())
 
 const timetableDetail = require('../controllers/timetable')
-console.log(timetableDetail)
 routes.post('/reg', timetableDetail.timetableRegistrationController)
 routes.get('/reg', timetableDetail.timetableDataFetching)
 

@@ -6,7 +6,6 @@ routes.use(cors())
 app.use(cors())
 
 const teachtimetableDetail = require('../controllers/teachtimetable')
-console.log(teachtimetableDetail)
 routes.post('/reg', teachtimetableDetail.teachtimetableRegistrationController)
 routes.get('/reg', teachtimetableDetail.teachtimetableDataFetching)
 

@@ -2,6 +2,9 @@ const db=require('./conn').db
 const mongoose=require('./conn').mongoose
 
 const teachtimetableSchema=mongoose.Schema({
+    name:{
+        type:String
+    },
     branch:{
         type:String
     },

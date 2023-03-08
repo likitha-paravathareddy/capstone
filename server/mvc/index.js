@@ -42,6 +42,11 @@ const teachtimetableRoutes = require('./routes/teachtimetable')
 
 app.use('/teachtimetables', teachtimetableRoutes)
 
+const studentRoutes = require('./routes/students')
+
+app.use('/students', studentRoutes)
+
+
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/faculty", require("./routes/facultyRoutes"));
 app.use(errorHandler);
