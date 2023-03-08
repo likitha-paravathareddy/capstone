@@ -14,14 +14,16 @@ $("#sub1").click(() => {
 
 
     console.log("hello")
-  student = localStorage.getItem('student');
+    rollNo = JSON.parse(localStorage.getItem("student")).studentId;
+    console.log(rollNo)
+  //student = localStorage.getItem('student.studentId');
   //studentId = student.studentId
-  console.log(student)
+  //console.log(student)
   
 
 
   $.get(
-    `http://localhost:8080/result/getResults/${student}`,
+    `http://localhost:8080/result/getResults/${rollNo}`,
     function (data) {
      console.log(data);
       for (i = 0; i < data.length; i++) {

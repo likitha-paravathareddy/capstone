@@ -5,6 +5,9 @@ $("documnet").ready(async function () {
         }
     });
     console.log("hello")
+    branch=JSON.parse(localStorage.getItem("student")).branch;
+    semester = JSON.parse(localStorage.getItem("student")).semester;
+    console.log(branch)
 
 
     var sub
@@ -16,9 +19,11 @@ $("documnet").ready(async function () {
         {
             console.log("bye")
             //console.log(data[0])
-            if(data[i].departmentName == 'cse')
+            if(data[i].departmentName == branch)
             {
-            sub = data[i].semester1
+               // console.log(data)
+            sub = data[i][semester];
+            
             }
         }
 
@@ -48,31 +53,53 @@ $("documnet").ready(async function () {
         //   parent.innerHTML = parent.innerHTML + templateString;
         // }
       });
+      console.log("ghsaku")
       console.log(sub)
      // card = document.getElementById("cards")
       await $.get("http://localhost:8080/courses/reg", function (data) {
         
         //console.log(data)
         //console.log("hey")
+        var colors = ["blue", "green", "yellow", "brown", "purple","orange"]
+        //console.log(colors[0])
+        x =0;
         for(i=0;i<data.length;i++)
         {
             course = data[i].courseName
+            //console.log(course)
             num = sub.indexOf(course)
-          if(num>0)
+           // console.log(colors[i])
+            //console.log(data[0])
+            //curriculum
+            //console.log( data[0].curriculum[0])
+           
+          if(num>=0)
           {
+            
+            console.log(course)
             templateString = '<div class="col-md-4 col-sm-6 content-card">'+
             '<div class="card-big-shadow">'+
-                '<div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">'+
+                '<div class="card card-just-text" data-background="color" data-color='+
+                colors[x]+
+                ' data-radius="none">'+
                     '<div class="content">'+
                         '<h6 class="category">'+
-                        data[i].courseName
                         '</h6>'+
-                        '<h4 class="title"><a href="#">Blue Card</a></h4>'+
-                        '<p class="description">What all of these have in common is that theyre pulling information out of the app or the service and making it relevant to the moment. </p>'+
+                        '<h4 class="title"><a href="courses.html#'+
+                        data[i].courseName+
+                        '">'+
+                        data[i].courseName+
+                        '</a></h4>'+
+                        '<p class="description"><a href = "courses.html#'+
+                        data[i].courseName+
+                        '">'+
+                        data[i].curriculum[0].substring(0, 100)+
+                        '</a></p>'+
                     '</div>'+
                 '</div>'+
             '</div>'+
         '</div>';
+        x++;
             
         $("#cards").append(templateString);
           }
