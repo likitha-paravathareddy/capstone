@@ -54,21 +54,36 @@ $("documnet").ready(async function () {
         
         //console.log(data)
         //console.log("hey")
+        var colors = ["blue", "green", " yellow", "brown", "purple","orange"]
+        //console.log(colors[0])
         for(i=0;i<data.length;i++)
         {
             course = data[i].courseName
             num = sub.indexOf(course)
+            console.log(colors[i])
+            console.log(data[0])
+            //curriculum
+            console.log( data[0].curriculum[0])
           if(num>0)
           {
             templateString = '<div class="col-md-4 col-sm-6 content-card">'+
             '<div class="card-big-shadow">'+
-                '<div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">'+
+                '<div class="card card-just-text" data-background="color" data-color='+
+                colors[i]+
+                ' data-radius="none">'+
                     '<div class="content">'+
                         '<h6 class="category">'+
-                        data[i].courseName
                         '</h6>'+
-                        '<h4 class="title"><a href="#">Blue Card</a></h4>'+
-                        '<p class="description">What all of these have in common is that theyre pulling information out of the app or the service and making it relevant to the moment. </p>'+
+                        '<h4 class="title"><a href="courses.html#'+
+                        data[i].courseName+
+                        '">'+
+                        data[i].courseName+
+                        '</a></h4>'+
+                        '<p class="description"><a href = "courses.html#'+
+                        data[i].courseName+
+                        '">'+
+                        data[i].curriculum[0].substring(0, 100)+
+                        '</a></p>'+
                     '</div>'+
                 '</div>'+
             '</div>'+
