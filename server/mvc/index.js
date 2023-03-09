@@ -18,6 +18,14 @@ const attendanceRoutes = require('./routes/attendance.js')
 
 app.use('/attendance', attendanceRoutes)
 
+const calendarRoutes = require('./routes/calendar.js')
+
+app.use('/calendar', calendarRoutes)
+
+const profileRoutes = require('./routes/profile.js')
+
+app.use('/profile', profileRoutes)
+
 const resultRoutes = require('./routes/results.js')
 
 app.use('/result', resultRoutes)
