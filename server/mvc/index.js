@@ -62,6 +62,10 @@ const examRoutes=require('./routes/exams')
 
 app.use('/exams',examRoutes)
 
+const dataRoutes=require('./routes/data')
+
+app.use('/data',dataRoutes)
+
 // const bookRoutes=require('./routes/books')
 
 // app.use('/books',bookRoutes)
