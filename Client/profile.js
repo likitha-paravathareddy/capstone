@@ -3,13 +3,49 @@
 //     image.src = URL.createObjectURL(event.target.files[0]);
 //   };
 $(document).ready(function(){
-
+  var name=JSON.parse(localStorage.getItem("student")).name
+  var rollnumber=JSON.parse(localStorage.getItem("student")).studentId
+  var department=JSON.parse(localStorage.getItem("student")).branch
+  var email=JSON.parse(localStorage.getItem("student")).email
+  document.getElementById("name").innerHTML=name
+  document.getElementById("roll").innerHTML=rollnumber
+  document.getElementById("dept").innerHTML=department
+  document.getElementById("email").innerHTML=email
+  document.getElementById("nametop").innerHTML=name
+  var urlse="http://127.0.0.1:8080/profile/find"
+  dat123={email:email}
+  dat123=JSON.stringify(dat123)
+  $.ajaxSetup({
+    headers: {
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'
+    }
+ });
+ $.post(urlse, dat123, function (xhr, status, responseText){
+    data1=JSON.parse(responseText.responseText)
+    if(responseText.responseText!="0")
+    {
+      document.getElementById("contacta").value=data1[0].contact
+      document.getElementById("contacta").readOnly=true
+      document.getElementById("dob").value=data1[0].dob
+      document.getElementById("dob").readOnly=true
+      document.getElementById("gender").value=data1[0].gender
+      document.getElementById("gender").readOnly=true
+      document.getElementById("address").value=data1[0].address
+      document.getElementById("address").readOnly=true
+      document.getElementById("gname").value=data1[0].guardian_name
+      document.getElementById("gname").readOnly=true
+      document.getElementById("gcontact").value=data1[0].guardian_contact
+      document.getElementById("gcontact").readOnly=true
+      document.getElementById("exam").value=data1[0].exam_name
+      document.getElementById("exam").readOnly=true
+      document.getElementById("examrank").value=data1[0].rank
+      document.getElementById("examrank").readOnly=true
+    }
+  })
   $("#submit-details").click(() =>
   {
-    var name=JSON.parse(localStorage.getItem("student")).name
-    var rollnumber=JSON.parse(localStorage.getItem("student")).studentId
-    var department=JSON.parse(localStorage.getItem("student")).branch
-    var email=JSON.parse(localStorage.getItem("student")).email
+
     var image
     var img=document.getElementById("file")
     var fd = new FormData();
@@ -70,6 +106,17 @@ $(document).ready(function(){
   }
 })
     
+  })
+  $("#edit").click(function(){
+
+    document.getElementById("contacta").readOnly=false
+    document.getElementById("dob").readOnly=false
+    document.getElementById("gender").readOnly=false
+    document.getElementById("address").readOnly=false
+    document.getElementById("gname").readOnly=false
+    document.getElementById("gcontact").readOnly=false
+    document.getElementById("exam").readOnly=false
+    document.getElementById("examrank").readOnly=false
   })
 })
 

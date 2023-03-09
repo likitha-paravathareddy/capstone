@@ -98,7 +98,22 @@ async function profileDataFetching(req,res){
         res.send("bad request")
     });
 }
+
+async function profileFindDataFetching(req,res){
+    profileModelCtrl.profileModel.find({email:req.body.email}).then((docs)=>{
+        console.log(docs.length)
+        if(docs.length>0)
+        {
+            res.send(docs)
+        }
+        else{
+            res.send("0")
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
         
 
 
-module.exports={ uploadimg,uploadimgHandler,profileRegistrationController , profileDataFetching }
+module.exports={ uploadimg,uploadimgHandler,profileFindDataFetching,profileRegistrationController , profileDataFetching }

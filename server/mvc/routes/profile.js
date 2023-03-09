@@ -9,5 +9,6 @@ const profileDetail = require('../controllers/profile')
 routes.post('/upload',profileDetail.uploadimgHandler)
 routes.post('/reg',profileDetail.profileRegistrationController)
 routes.get('/reg', profileDetail.profileDataFetching)
+routes.post('/find',profileDetail.profileFindDataFetching)
 
 module.exports = routes
