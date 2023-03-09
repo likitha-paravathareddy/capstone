@@ -18,6 +18,9 @@ const profileSchema=mongoose.Schema({
     {
         type:String
     },
+    img:{
+      type:String
+    },
     contact:{
         type:String
     },

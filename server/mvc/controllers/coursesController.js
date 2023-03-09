@@ -7,7 +7,9 @@ async function coursesRegistrationController(req,res){
         courseName:req.body.courseName,
         departmentName:req.body.departmentName,
         curriculum : req.body.curriculum,
-        assignedTeachers : req.body.assignedTeachers
+        assignedTeachers : req.body.assignedTeachers,
+        link:req.body.link,
+        notes:req.body.notes
     })
     // console.log(subjectCode_data)
   
