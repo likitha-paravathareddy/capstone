@@ -9,7 +9,7 @@ $(document).ready(function(){
         feetype=document.getElementById("feetype").value
         branch=document.getElementById("feebranch").value
         semester=document.getElementById("feesemester").value
-        name=localStorage.getItem("Name")
+        name=localStorage.getItem("student").name
         var url="http://127.0.0.1:8080/payments/reg"
 
 

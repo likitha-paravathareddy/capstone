@@ -53,10 +53,19 @@ app.use('/payments', paymentRoutes)
 const mypaymentRoutes=require('./routes/mypayments')
 
 app.use('/mypayments',mypaymentRoutes)
+
 const myexampaymentRoutes=require('./routes/exampayments')
+
 app.use('/exampayments',myexampaymentRoutes)
+
 const examRoutes=require('./routes/exams')
+
 app.use('/exams',examRoutes)
+
+// const bookRoutes=require('./routes/books')
+
+// app.use('/books',bookRoutes)
+
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/faculty", require("./routes/facultyRoutes"));
 app.use(errorHandler);
