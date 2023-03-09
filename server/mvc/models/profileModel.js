@@ -1,31 +1,54 @@
 const db=require('./conn').db
-const mongoose = require("mongoose");
+const mongoose=require('./conn').mongoose
 
-const profileSchema = mongoose.Schema(
-  {
+const profileSchema=mongoose.Schema({
+    name:
+    {
+        type:String
+    },
+    rollnumber:
+    {
+        type:String
+    },
+    department:
+    {
+        type:String
+    },
+    email:
+    {
+        type:String
+    },
+    contact:{
+        type:String
+    },
+    dob:
+    {
+        type:String
+    },
+    gender:{
+        type:String
+    },
+    address:
+    {
+        type:String
+    },
+    guardian_name:
+    {
+        type:String
+    },
+    guardian_contact:
+    {
+        type:String
+    },
+    exam_name:
+    {
+        type:String
+    },
+    rank:
+    {
+        type:Number
+    }    
+})
 
-    rollNo: {
-      type: Number,
-      required: [true, "Please add the RollNo"],
-      unique: [true, "rollno already exist"]
-    },
-    email: {
-      type: String,
-      required: [true, "Please add the user email address"],
-      unique: [true, "Email address already taken"],
-    },
-    password: {
-      type: String,
-      required: [true, "Please add the user password"],
-    },
-    userName: {
-      type: String,
-      required: [true, "Please add the user email address"],
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
-
-module.exports = mongoose.model("User", userSchema);
+let profileModel=mongoose.model('profile',profileSchema)
+module.exports={ profileModel }
