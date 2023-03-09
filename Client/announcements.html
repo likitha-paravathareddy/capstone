@@ -147,11 +147,23 @@
            
               <form>
                 <h1>Announcement Form</h1>
+
+                <div class="col-md-6 mb-4" style="margin-left:-4%;">
+              
+                    <select class="select form-control select2" id = reasons>
+                      <option selected>To</option>
+                      <option value="all">all students</option>
+                      <option value="fee_dues">fee dues</option>
+                      <option value="less_attendance">less attendance </option>
+                      
+                    </select>
+    
+                  </div>
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" required>
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
-                <button type="submit">Submit</button>
+                <button type="button" id = "post">Submit</button>
               </form>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
@@ -291,6 +303,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
+    <script src="announcement.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

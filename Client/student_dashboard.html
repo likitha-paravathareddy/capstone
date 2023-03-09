@@ -568,8 +568,8 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="list-group list-group-flush my-n3">
-                  <div class="list-group-item bg-transparent">
+                <div class="list-group list-group-flush my-n3" id = "notification">
+                  <!-- <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-box fe-24"></span>
@@ -580,8 +580,8 @@
                         <small class="badge badge-pill badge-light text-muted">1m ago</small>
                       </div>
                     </div>
-                  </div>
-                  <div class="list-group-item bg-transparent">
+                  </div> -->
+                  <!-- <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-download fe-24"></span>
@@ -592,8 +592,8 @@
                         <small class="badge badge-pill badge-light text-muted">2m ago</small>
                       </div>
                     </div>
-                  </div>
-                  <div class="list-group-item bg-transparent">
+                  </div> -->
+                  <!-- <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-inbox fe-24"></span>
@@ -603,9 +603,9 @@
                         <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
                         <small class="badge badge-pill badge-light text-muted">30m ago</small>
                       </div>
-                    </div> <!-- / .row -->
-                  </div>
-                  <div class="list-group-item bg-transparent">
+                    </div>
+                  </div> -->
+                  <!-- <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-link fe-24"></span>
@@ -616,8 +616,8 @@
                         <small class="badge badge-pill badge-light text-muted">1h ago</small>
                       </div>
                     </div>
-                  </div> <!-- / .row -->
-                </div> <!-- / .list-group -->
+                  </div>  -->
+                </div> 
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
@@ -625,6 +625,7 @@
             </div>
           </div>
         </div>
+    
         <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -917,6 +918,31 @@
           console.log('Upload complete! We’ve uploaded these files:', result.successful)
         });
       }
+    </script>
+     <script>
+      
+
+      $.get("http://localhost:8080/announce/reg",function(data,status){
+        console.log(data)
+
+        for(i=0;i<data.length;i++)
+        {
+          template= `<div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-box fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>${data[i].title}</strong></small>
+                        <div class="my-0 text-muted small">${data[i].message}</div>
+                        
+                      </div>
+                    </div>
+                  </div>`
+        }
+        $("#notification").append(template)
+      })
+      
     </script>
     <script src="js/apps.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -4,6 +4,7 @@ async function RegistrationController(req,res){
     console.log(req.body)
     let noticesData=noticesModelCtrl.announceModel
     ({
+        to:req.body.to,
         title:req.body.title,
         message:req.body.message
        
@@ -20,17 +21,17 @@ async function RegistrationController(req,res){
         
 }
 
-// async function paymentDataFetching(req,res){
+async function noticesDataFetching(req,res){
 
-//     paymentModelCtrl.paymentModel.find({}).then((docs)=>{
-//         if(docs)
-//         {
-//             res.send(docs)
-//         }
-//     }).catch((err)=>{
-//         res.send("bad request")
-//     });
-// }
+    noticesModelCtrl.announceModel.find({}).then((docs)=>{
+        if(docs)
+        {
+            res.send(docs)
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
 
 // async function paymentDataUpdating(req,res){
 //     console.log(req.body)
@@ -44,4 +45,4 @@ async function RegistrationController(req,res){
 //     })
 // }
 
-module.exports={ RegistrationController}
+module.exports={ RegistrationController,noticesDataFetching}
