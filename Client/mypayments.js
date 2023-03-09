@@ -8,7 +8,7 @@ $(document).ready(function(){
                 document.getElementById("namep").innerHTML=data[i].studentName
                 document.getElementById("rollp").innerHTML=data[i].studentId
                 document.getElementById("brancp").innerHTML=data[i].branch
-                document.getElementById("semp").innerHTML=data[i].semester
+                document.getElementById("semp").innerHTML=data[i].semester.substring(data[i].semester.length-1,data[i].semester.length)
                 document.getElementById("due").innerHTML=data[i].due
             }
 

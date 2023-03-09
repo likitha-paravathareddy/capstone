@@ -10,8 +10,7 @@ $(document).ready(function(){
                 <td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}2"></td>
                 <td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}3"></td>
                 <td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}4"></td>
-                <td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}5"></td>
-                <td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}6"></td>                           
+                <td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}5"></td>                        
                 </tr>`)
             }
         })
