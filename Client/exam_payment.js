@@ -8,9 +8,10 @@ $(document).ready(function(){
     $("#sget").click(function(){
         branch=document.getElementById("exambranch").value
         semester=document.getElementById("examsemester").value
-        id=localStorage.getItem("student").studentId
+        id=JSON.parse(localStorage.getItem("student")).studentId
 
-        name=localStorage.getItem("student").name
+        name=JSON.parse(localStorage.getItem("student")).name
+       
         var url="http://127.0.0.1:8080/payments/reg"
         $.get(url,function(data,status){
             for(let i=0;i<data.length;i++)

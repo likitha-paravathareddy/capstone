@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var url="http://127.0.0.1:8080/payments/reg"
-    var name=localStorage.getItem("student").name
+    var name=JSON.parse(localStorage.getItem("student")).name
     $.get(url,function(data,status){
         for(let i=0;i<data.length;i++){
             if(name==data[i].studentName){
