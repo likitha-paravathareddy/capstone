@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="test1.css">
+    <link rel="stylesheet" href="curriculum.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-  <body class="vertical  light  ">
+  <body class="vertical  light style ">
     <div class="wrapper">
       <nav class="topnav navbar navbar-light">
         <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
@@ -137,9 +137,10 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">exam fee</span></a>
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">college fee</span></a>
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">my payments</span></a>
+                  <a class="nav-link pl-3" href="exam_payment.html"><span class="ml-1 item-text">exam fee</span></a>
+                  <a class="nav-link pl-3" href="./payment.html"><span class="ml-1 item-text">college fee</span></a>
+                  <a class="nav-link pl-3" href="./mypayments.html"><span class="ml-1 item-text">my payments</span></a>
+             
                 </li>
                
               </ul>
@@ -218,22 +219,10 @@
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                           </ol>
                           <!-- Wrapper for slides -->
-                          <div class="carousel-inner">
-                            <div class="item active">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pmIxqkbzwm8"></iframe>
-                              </div>
-                            </div>
-                            <div class="item">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9rkInmyo_z8"></iframe>
-                              </div>
-                            </div>
-                            <div class="item">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ld8c_sgpbUU"></iframe>
-                              </div>
-                            </div>
+                          <div class="carousel-inner" id = "cou">
+                        
+                           
+                            
                           </div>
                           <!-- Left and right controls -->
                           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -246,11 +235,10 @@
                           </a>
                         </div>
                       </div>
-                      <!-- Description column -->
-                      <div class="col-sm-6">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Mauris metus. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Morbi imperdiet, mauris ac auctor dictum, nisl ligula
+                      <div class="col-sm-6" id = descrip>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Mauris metus. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Morbi imperdiet, mauris ac auctor dictum, nisl ligula
                           egestas nulla, et sollicitudin sem purus in lacus. Proin in tellus sit amet nibh dignissim sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas
-                        </p>
+                        </p> -->
                       </div>
                     </div>
                   </div>
@@ -265,8 +253,8 @@
                             <!-- <h6 class="card-subtitle text-muted">Front Sub-title</h6>
                             <p class="card-text">Front Text</p> -->
                           </div>
-                          <div class="back card-block">
-                            <p>
+                          <div class="back card-block" id>
+                            <!-- <p>
                                 In view of the growing importance of English as a tool for global communication and the
                                 consequent emphasis on training students to acquire language skills, the syllabus of English has
                                 been designed to develop linguistic, communicative and critical thinking competencies of
@@ -279,7 +267,7 @@
                                 authentic materials of a similar kind, for example, newspaper articles, advertisements,
                                 promotional material etc. The focus in this syllabus is on skill development, fostering ideas and
                                 practice of language skills in various contexts and cultures.
-                            </p>
+                            </p> -->
                            
                           </div>
                         </div>
@@ -528,7 +516,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
-    <script src = "test1.js"></script>
+    <script src = "curriculum.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

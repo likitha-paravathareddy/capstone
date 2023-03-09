@@ -6,15 +6,10 @@ async function attendanceRegistrationController(req,res){
     ({
         date:req.body.date,
         rollNumber:req.body.rollNumber,
-        sub1: req.body.sub1,
-        sub2: req.body.sub2,
-        sub3: req.body.sub3,
-        sub4: req.body.sub4,
-        sub5: req.body.sub5,
-        sub6: req.body.sub6        
+        sub: req.body.sub     
     })
     // console.log(attendance_data)
-    attendanceModelCtrl.attendanceModel.find({ date:req.body.date, rollNumber:req.body.rollNumber, sub1: req.body.sub1, sub2: req.body.sub2, sub3: req.body.sub3, sub4: req.body.sub4, sub5: req.body.sub5, sub6: req.body.sub6 }).then((resp) => {
+    attendanceModelCtrl.attendanceModel.find({ date:req.body.date, rollNumber:req.body.rollNumber }).then((resp) => {
         if (resp.length != 0) {
             res.send("1")
         }

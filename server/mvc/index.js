@@ -54,6 +54,33 @@ const studentRoutes = require('./routes/students')
 
 app.use('/students', studentRoutes)
 
+const paymentRoutes = require('./routes/payments')
+
+app.use('/payments', paymentRoutes)
+
+const mypaymentRoutes=require('./routes/mypayments')
+
+app.use('/mypayments',mypaymentRoutes)
+
+const myexampaymentRoutes=require('./routes/exampayments')
+
+app.use('/exampayments',myexampaymentRoutes)
+
+const examRoutes=require('./routes/exams')
+
+app.use('/exams',examRoutes)
+
+const dataRoutes=require('./routes/data')
+
+app.use('/data',dataRoutes)
+
+// const bookRoutes=require('./routes/books')
+
+// app.use('/books',bookRoutes)
+
+const announcementRoutes=require('./routes/announcement')
+
+app.use('/announce',announcementRoutes)
 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/faculty", require("./routes/facultyRoutes"));

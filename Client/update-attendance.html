@@ -206,7 +206,7 @@
               <div class="form-group col-md-8">
                 <label for="date-input1">Select Date</label>
                 <div class="input-group">
-                  <input type="text" class="form-control drgpicker" id="date-input1" value="04/24/2020" aria-describedby="button-addon2">
+                  <input type="text" class="form-control drgpicker" id="date" value="04/24/2020" aria-describedby="button-addon2">
                   <div class="input-group-append">
                     <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
                   </div>
@@ -215,17 +215,31 @@
               <div class="form-group col-md-8">
                     <label for="dept">Select Department</label>
                     <select class="form-control" id="dept">
-                      <option>CSE</option>
-                      <option>BIOTECH</option>
-                      <option>IT</option>
-                      <option>MECHANICAL</option>
-                      <option>ECE</option>
-                      <option>EEE</option>
+                      <option value="cse">CSE</option>
+                      <option value="civil">CIVIL</option>
+                      <option value="it">IT</option>
+                      <option value="mechanical">MECHANICAL</option>
+                      <option value="ece">ECE</option>
+                      <option value="eee">EEE</option>
+                    </select>
+                  </div>
+                
+                  <div class="form-group col-md-8">
+                    <label for="dept">Semester</label>
+                    <select class="form-control" id="sem">
+                      <option value="semester1">semester-1</option>
+                      <option value="semester2">semester-2</option>
+                      <option value="semester3">semester-3</option>
+                      <option value="semester4">semester-4</option>
+                      <option value="semester5">semester-5</option>
+                      <option value="semester6">semester-6</option>
+                      <option value="semester7">semester-7</option>
+                      <option value="semester8">semester-8</option>
                     </select>
                   </div>
               </div>
               
-              <button type="button" class="btn mb-2 btn-outline-primary" style="margin-right:82%;" onclick="viewStudents()">View Students</button>
+              <button type="button" class="btn mb-2 btn-outline-primary" style="margin-right:82%;" id="attend">View Students</button>
 
               <br><br>
               <div id="students" style="display:none">
@@ -239,44 +253,20 @@
                         <td>3</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <td>Saloni Dayal</td>
-                        <td>160119733014</td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>                           
-                        </tr>
-                        <tr>
-                            <td>Abc Def</td>
-                            <td>160119733015</td>
-                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>                           
-                            </tr>
-                            <tr>
-                                <td>slkjsd lskd</td>
-                                <td>782993</td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>                           
-                                </tr>
+                    <tbody id="stuattend">
+                       
                     </tbody>
+
                 </table>
+
+                <button id="post" type="submit">post</button>
+      
+                
                 
             </div>
-
+            <br>
+            
 
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
@@ -416,16 +406,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
-    <script>
-        function viewStudents() {
-  var x = document.getElementById("students");
-  if (x.style.display === "none") {
-    x.style.display = "flex";
-  } else {
-    x.style.display = "none";
-  }
-}
-      </script>
+    <script src="update-attendance.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

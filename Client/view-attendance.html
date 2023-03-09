@@ -96,7 +96,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./timetable"><span class="ml-1 item-text">timetable</span>
+                  <a class="nav-link pl-3" href="student_timetable.html"><span class="ml-1 item-text">timetable</span>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -133,9 +133,9 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">exam fee</span></a>
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">college fee</span></a>
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">my payments</span></a>
+                  <a class="nav-link pl-3" href="#"><span class="ml-1 item-text">exam fee</span></a>
+                  <a class="nav-link pl-3" href="#"><span class="ml-1 item-text">college fee</span></a>
+                  <a class="nav-link pl-3" href="#"><span class="ml-1 item-text">my payments</span></a>
                 </li>
                
               </ul>
@@ -207,9 +207,9 @@
                 <div class="col-md-6 mb-4">
                   <div class="card shadow">
                     <div class="card-body">
-                      <h4 class="card-title">Total Present Days</h4>
-                      <h4>160</h4>
-                      <p>12 days remaining</p>
+                      <h4 class="card-title">Total Present Classes</h4>
+                      <h4 id="present">1</h4>
+                      <p id="total">out of 6</p>
                     </div>
                   </div>
                 </div>
@@ -217,8 +217,8 @@
                   <div class="card shadow">
                     <div class="card-body">
                       <h4 class="card-title">Attendance Percentage</h4>
-                      <h4>75%</h4>
-                      <p>you have adequate attendance improve more</p>
+                      <h4 id="percent">75%</h4>
+                      <p id="attend">you have adequate attendance improve more</p>
                     </div>
                   </div>
                 </div>
@@ -230,55 +230,22 @@
 
 
 
-              <table class="table datatables" id="dataTable-1">
+              <table class="table datatables" id="dataTable-3">
                         <thead>
                           <tr>
                             <th>Date</th>
-                            <th>Lesson 1</th>
-                            <th>Lesson 2</th>
-                            <th>Lesson 3</th>
+                            <th>Period 1</th>
+                            <th>Period 2</th>
+                            <th>Period 3</th>
                             <th>Lesson 4</th>
                             <th>Lesson 5</th>
-                            <th>Lesson 6</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>01-03-2023</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                            <td>Absent</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                          </tr>
-                          <tr>
-                            <td>02-03-2023</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                            <td>Absent</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                          </tr>
-                          <tr>
-                            <td>03-03-2023</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                            <td>Absent</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                          </tr>
-                          <tr>
-                            <td>04-03-2023</td>
-                            <td>Absent</td>
-                            <td>Absent</td>
-                            <td>Present</td>
-                            <td>Absent</td>
-                            <td>Present</td>
-                            <td>Present</td>
-                          </tr>
+                        <tbody id="viewattend">
+                   
+                   
+                 
+                
                           
 
             </tbody>
@@ -423,6 +390,7 @@
     <script src="js/config.js"></script>
     <script src='js/jquery.dataTables.min.js'></script>
     <script src='js/dataTables.bootstrap4.min.js'></script>
+    <script src="view_attendance.js"></script>
     <script>
       $('#dataTable-1').DataTable(
       {

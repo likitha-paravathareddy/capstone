@@ -18,7 +18,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-    <link rel = "stylesheet" href = "courses.css">
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -202,82 +201,60 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row" id = "cards">
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Blue Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
+                <div class="col-md-12">
+                    <form>
+
+               
+                        <label for="sel1">Department:</label>
+                        <select class="form-control" id="exambranch">
+                          <option value="cse">CSE</option>
+                          <option value="it">IT</option>
+                          <option value="ece">ECE</option>
+                          <option value="eee">EEE</option>
+                          <option value="mech">MECH</option>
+                          <option value="civil">CIVIL</option>
+                        </select>
+                        <label for="sel1">Semester:</label>
+                        <select class="form-control" id="examsemester">
+                            <option value="semester1">semester-1</option>
+                            <option value="semester2">semester-2</option>
+                            <option value="semester3">semester-3</option>
+                            <option value="semester4">semester-4</option>
+                            <option value="semester5">semester-5</option>
+                            <option value="semester6">semester-6</option>
+                            <option value="semester7">semester-7</option>
+                            <option value="semester8">semester-8</option>
+                        </select>
+                <br>
+                        <button id="sget" type="button">get</button>
+                    </form>
+                    <br>
+                    <br>
+                    <h5 id="exampay"></h5>
+                    <div class="card" id="examfee" style="display:none">
+                        <div class="card-header">
+                          <h4 class="text-center">Exam Fee Payment</h4>
                         </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Green Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Yellow Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Brown Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
+                        <div class="card-body">
+                          <form >
+                            <div class="form-group">
+                              <label for="studentName">Student Name</label>
+                              <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Enter your name">
                             </div>
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Purple Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> -->
-                    
-                    <!-- <div class="col-md-4 col-sm-6 content-card">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
-                                <div class="content">
-                                    <h6 class="category">Best cards</h6>
-                                    <h4 class="title"><a href="#">Orange Card</a></h4>
-                                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                                </div>
+                            <div class="form-group">
+                              <label for="studentID">Student ID</label>
+                              <input type="text" class="form-control" id="studentId" name="studentID" placeholder="Enter your ID">
                             </div>
+                            <div class="form-group">
+                              <label for="amount">Amount to Pay</label>
+                              <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter amount in USD">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="pay">Pay Now</button>
+                          </form>
                         </div>
-                    </div> -->
-                </div>
-                </div>
+                      </div>
+                    </div>
+                  </div>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
@@ -416,7 +393,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
-    <script src="courses.js"></script>
+    <script src="exam_payment.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
