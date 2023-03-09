@@ -1,105 +1,262 @@
-// const { bookService, fineService, borrowerService, returnService } = require("../services");
+const bookModelCtrl=require('../models/bookModel')
+const path = require('path')
+const express = require("express");
+const app=express()
+const bodyParser=require("body-parser");
+const { S3Client } = require('@aws-sdk/client-s3');
 
-// module.exports = {
-//     displayBooks: async (req, res, next) => {
-//         const books = await bookService.getAllBooks(next);
-//         console.log(res.locals)
-//         res.render("pages/books", { books });
-//     },
-//     addBookForm: function (req, res, next) {
-//         res.render('form/add-book');
-//     },
-//     addBook: async (req, res, next) => {
-//         console.log(req.body);
-//         // there are 2 method save and create to add any entries 
-//         // const book = new Book(req.body);
-//         // book.save(function(err, result) {
-//         //     if (err) throw err;
-//         //     return res.json(result);
-//         // })
+const multer = require('multer')
+const multerS3 = require('multer-s3')
+app.use(
+    bodyParser.urlencoded({
+      extended: true,
+    })
+  );
 
-//         try {
-//             const book = await bookService.addBook(req.body, next);
-//             res.redirect("/book");
-//         } catch (e) {
-//             console.log(e.toString());
-//         }
-//         //res.json({message: "book added successfully."});
-//     },
+let s3 = new S3Client({
+    region: process.env.AWS_REGION,
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey:process.env.AWS_SECRET_ACCESS_KEY,
+    },
+    sslEnabled: false,
+    s3ForcePathStyle: true,
+    signatureVersion: 'v4',
+});
 
-//     purchaseBook: async (req, res, next) => {
-//         const { bookId } = req.params;
-//         const userId = req.userId;
-//         const alreadyPurchased = await borrowerService.findPurchaseBookById(userId, bookId, next);
-//         if (alreadyPurchased && alreadyPurchased?.active) {
-//             // then show error
-//             res.locals.message = "User has already purchased this book";
-//             return res.redirect("/book");
-//         }
+const uploadimg= multer({
+    storage: multerS3({
+      s3: s3,
+      bucket: 'collegecrm',
+      metadata: function (req, file, cb) {
+        cb(null, {fieldName: file.fieldname});
+      },
+      key: function (req, file, cb) {
+        cb(null, Date.now().toString()+path.parse(file.originalname).name+ path.extname(file.originalname))
+      }
+    })
+  }).single("img")
 
-//         const book = await bookService.findBookById(bookId, next);
-//         if (!book) {
-//             // then show error
-//             res.locals.message = `Book id does not exist.`;
-//             res.redirect("/book");
-//         }
-//         if (book && book?.quantity <= 0) {
-//             // then show error
-//             res.locals.message = `Not sufficient book: ${book.book_name} to purchase`;
-//             res.redirect("/book");
-//         }
 
-//         book.quantity -= 1;
-//         await borrowerService.purchaseBook({ userId, bookId }, next);
-//         res.locals.message = `Successfully purchased book ${book.book_name}`;
-//         res.redirect("/book");
-//     },
-//     returnBook: async (req, res, next) => {
-//         const userId = req.userId;
-//         const { bookId } = req.params;
-//         const purchasedBook = await borrowerService.findPurchaseBookById(userId, bookId, next);
-//         console.log('purchasedBook', purchasedBook)
-//         if (purchasedBook && !purchasedBook?.active) {
-//             // book is already returned
-//             res.locals.message = "Book is already returned.";
-//             return res.redirect("/user/profile");
-//         }
+  function uploadimgHandler(req, res) {
+    uploadimg(req, res, (err) => {
+      if (err) {
+        console.log(err);
+  
+        res.send("Something went wrong");
+      }
+      // console.log(req.file.location);
+      else{
+  
+      res.send(req.file.location);
+      }
+      
+    });
+  }
 
-//         const book = await bookService.findBookById(bookId, next);
-//         console.log('book', book)
-//         if (!book) {
-//             // then show error
-//             res.locals.message = `Book id does not exist or maybe deleted.`;
-//             res.redirect("/user/profile");
-//         }
+async function bookRegistrationController(req,res){
+    console.log(req.body)
+    let bookData=bookModelCtrl.bookModel
+    ({
+        book_name: req.body.book_name,
+        cover_image: req.body.cover_image,
+        author_name: req.body.author_name,
+        isbn: "available",
+        genres: req.body.genres,
+        publisher: req.body.publisher,
+        quantity: req.body.quantity,
+        price: req.body.price  
+    })
+    // console.log(profile_data)
+    bookModelCtrl.bookModel.find({}).then((resp) => {
+        if (resp.length != 0) {
+            res.send("1")
+        }
+        else {
+            bookData.save().then(()=>{
+                res.send("sent");
+            }).catch((err)=>{
+                res.send(err);
+            })
+            
+        }
+    })
+}
 
-//         purchasedBook.active = false;
-//         // make active:false in borrowerModel
-//         await borrowerService.updateBorrowerBook(userId, bookId, { active: false }, next);
+async function bookDataFetching(req,res){
+    bookModelCtrl.bookModel.find({}).then((docs)=>{
+        if(docs)
+        {
+            res.send(docs)
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
 
-//         const date1 = new Date(purchasedBook.purchaseDate);
-//         const date2 = new Date();
-//         const diffTime = Math.abs(date2 - date1);
-//         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+async function bookFindDataFetching(req,res){
+    bookModelCtrl.bookModel.find({book_name:req.body.book_name}).then((docs)=>{
+        console.log(docs.length)
+        if(docs.length>0)
+        {
+            res.send(docs)
+        }
+        else{
+            res.send("0")
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
+        
 
-//         // add entry to return service
-//         await returnService.returnBook({ userId, bookId }, next);
+async function bookBorrowData(req,res){
+    bookModelCtrl.bookModel.find({book_name:req.body.book_name}).then((docs)=>{
+        console.log(docs.length)
+        if(docs.length>0)
+        {
+            if(docs[0].isbn=="available"){
+                let borrowData=bookModelCtrl.borrowModel
+                ({
+                    user_id:req.body.user_id,
+                    book_name:req.body.book_name,
+                    borrowedDate:req.body.borrowedDate
+                })
+                bookData.save().then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{isbn:"borrowed"}).then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })
+            }
+            else{
+                res.send("Book is not available to borrow")
+            }
+        }
+        else{
+            res.send("0")
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+} 
 
-//         // calculate fine
-//         if (diffDays <= 7) {
-//             try {
-//                 await fineService.createFine({ userId }, next);
-//             } catch (e) {
-//                 console.log(e.toString())
-//             }
-//             return res.redirect("/user/profile");
-//         }
+async function getBookBorrowData(req,res){
+    bookModelCtrl.borrowModel.find({}).then((docs)=>{
+        if(docs)
+        {
+            res.send(docs)
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
 
-//         // for every week 10 rs is fine
+async function bookReturnData(req,res){
+ 
+    let returnData=bookModelCtrl.returnModel
+                ({
+                    user_id:req.body.user_id,
+                    book_name:req.body.book_name,
+                    returnedDate:req.body.returnedDate
+                })
+                returnData.save().then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{isbn:"available"}).then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })
+                bookModelCtrl.borrowModel.find({book_name:req.body.book_name}).then((docs)=>{
+                    const date1=docs[0].borrowedDate
+                    const date2=req.body.returnedDate
+                    const diffTime = Math.abs(date2 - date1);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    const fine=(diffDays / 7) * 10;
+                    if(diffDays>7){
+                        let fineData=bookModelCtrl.fineModel({
+                            user_id:req.body.user_id,
+                            amount:fine
+                        })
+                        fineData.save().then(()=>{
+                            res.send("sent");
+                        }).catch((err)=>{
+                            res.send(err);
+                        })
+                    }
+                }).catch((err)=>{
+                    res.send(err);
+                })
+           
+    
+} 
 
-//         const getTotalFine = (diffDays / 7) * 10;
+async function getBookReturnData(req,res){
+    bookModelCtrl.returnModel.find({}).then((docs)=>{
+        if(docs)
+        {
+            res.send(docs)
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
 
-//         await fineService.createFine({ userId, amount: getTotalFine }, next);
-//         res.redirect("/user/profile");
-//     }
-// }
+async function bookPurchaseData(req,res){
+    bookModelCtrl.bookModel.find({book_name:req.body.book_name}).then((docs)=>{
+        console.log(docs.length)
+        if(docs.length>0){
+
+    let purchaseData=bookModelCtrl.purchaseModel
+                ({
+                    user_id:req.body.user_id,
+                    book_name:req.body.book_name,
+                    price:req.body.price,
+                    purchasedDate:req.body.purchasedDate
+
+                })
+                purchaseData.save().then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{isbn:"purchased"}).then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })    
+            }
+            else{
+                req.send("Sorry Book is not available")
+            }
+        })
+} 
+
+
+async function getBookPurchaseData(req,res){
+    bookModelCtrl.purchaseModel.find({}).then((docs)=>{
+        if(docs)
+        {
+            res.send(docs)
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+}
+
+async function bookPayFine(req,res){
+    bookModelCtrl.bookModel.updateOne({user_id:req.body.user_id},{paidAt:Date.now()}).then(()=>{
+        res.send("sent");
+    }).catch((err)=>{
+        res.send(err);
+    })    
+}
+
+module.exports={ uploadimgHandler,bookFindDataFetching,bookPurchaseData,getBookPurchaseData ,bookBorrowData,getBookBorrowData,bookReturnData,getBookReturnData,bookPayFine,bookRegistrationController , bookDataFetching }
