@@ -10,11 +10,18 @@ const coursesSchema=mongoose.Schema({
     {
         type:String
     },
-   curriculum:
-   {
-    type: Array,
-    default:[]
-   },
+   curriculum:[{
+    unitName:{
+        type:String
+    },
+    topics:[{
+        topicName:{type:String},
+        videolink:{type:String},
+        description:{type:String},
+        notes:{type:String},
+        pdf:{type:String}
+    }]
+   }],
    assignedTeachers:
    {
     type: String

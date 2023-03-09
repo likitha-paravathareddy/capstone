@@ -6,8 +6,8 @@ routes.use(cors())
 app.use(cors())
 
 const profileDetail = require('../controllers/profile')
-
-routes.post('/reg', profileDetail.profileRegistrationController)
+routes.post('/upload',profileDetail.uploadimgHandler)
+routes.post('/reg',profileDetail.profileRegistrationController)
 routes.get('/reg', profileDetail.profileDataFetching)
 
 module.exports = routes

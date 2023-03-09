@@ -212,7 +212,7 @@
                         <span class="glyphicon glyphicon-camera"></span>
                         <span>Change Image</span>
                       </label>
-                      <input id="file" type="file" onchange="loadFile(event)"/>
+                      <input id="file" type="file" name="file" />
                       <img src="../Client/assets/images/panda_1.webp" id="output" width="200" />
                     </div>
                   </div>
@@ -220,7 +220,7 @@
                 <div class="col">
                   <div class="row align-items-center">
                     <div class="col-md-7">
-                      <h4 class="mb-1">Saloni Dayal</h4>
+                      <h4 class="mb-1" id="nametop">Saloni Dayal</h4>
                       <p class="small mb-3"><span class="badge badge-dark">Hyderabad, India</span></p>
                     </div>
                   </div>
@@ -243,20 +243,20 @@
                     <table class="table table-hover">
                       <tbody>
                         <tr>
-                          <td>Name</td>
-                          <td>Saloni Dayal</td>
+                          <td >Name</td>
+                          <td id="name">Saloni Dayal</td>
                         </tr>
                         <tr>
                           <td>Roll Number</td>
-                          <td>160119733014</td>
+                          <td id="roll">160119733014</td>
                         </tr>
                         <tr>
                           <td>Department</td>
-                          <td>CSE</td>
+                          <td id="dept">CSE</td>
                         </tr>
                         <tr>
                           <td>Email</td>
-                          <td>ab@abcemail.com</td>
+                          <td id="email">ab@abcemail.com</td>
                         </tr>                     
                       </tbody>
                     </table>
@@ -270,7 +270,7 @@
                 <tbody>
                   <tr>
                     <td>Contact Number</td>
-                    <td><input type="text" id="contact" class="form-control"></td>
+                    <td><input type="text" id="contacta" class="form-control"></td>
                   </tr>
                   <tr>
                     <td>Date Of Birth</td>
@@ -279,8 +279,8 @@
                   <tr>
                     <td>Gender</td>
                     <td><select class="form-control select2" id="gender">
-                        <option value="M">Male</option>
-                        <option value="F">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                       </select></td>
                   </tr>
                   <tr>
@@ -313,7 +313,7 @@
                   </tr> 
                 </tbody>
               </table>
-              <button id="submit-details" onclick="submitDetails()" class="btn btn-primary">Submit</button>
+              <button id="submit-details" class="btn btn-primary">Submit</button>
             </div> <!-- /.col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
