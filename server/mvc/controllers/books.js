@@ -32,10 +32,11 @@ const uploadimg= multer({
         cb(null, {fieldName: file.fieldname});
       },
       key: function (req, file, cb) {
+        console.log(path.parse(file.originalname))
         cb(null, Date.now().toString()+path.parse(file.originalname).name+ path.extname(file.originalname))
       }
     })
-  }).single("img")
+  }).single("files")
 
 
   function uploadimgHandler(req, res) {

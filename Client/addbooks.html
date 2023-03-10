@@ -215,16 +215,17 @@
                   </div>
                   <div class="form-group mb-3">
                     <label for="author-name">Upload Cover Image</label>
-                    <input type="file" id="example-fileinput" class="form-control-file">
+                    <input type="file" name="image" id="image" class="form-control-file">
                   </div>
                   <div class="form-group mb-3">
                     <label for="example-select">Genre</label>
                         <select class="form-control" id="example-select">
-                          <option>Comedy</option>
-                          <option>Horror</option>
-                          <option>Teen</option>
-                          <option>Vampires</option>
-                          <option>Romance</option>
+                          <option value="textbook">TextBook</option>
+                          <option value="comedy">Comedy</option>
+                          <option value="horror">Horror</option>
+                          <option vale="teen">Teen</option>
+                          <option value="vampires">Vampires</option>
+                          <option value="romance">Romance</option>
                         </select>
                   </div>
                   <div class="form-group mb-3">
@@ -250,7 +251,7 @@
 
                 </div>
               </div>
-              <button class="btn btn-primary">Save</button>
+              <button id="send" class="btn btn-primary">Save</button>
             </div>
             
           </div>
@@ -389,6 +390,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
+    <script src="addbooks.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

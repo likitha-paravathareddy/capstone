@@ -74,9 +74,9 @@ const dataRoutes=require('./routes/data')
 
 app.use('/data',dataRoutes)
 
-// const bookRoutes=require('./routes/books')
+const bookRoutes=require('./routes/books')
 
-// app.use('/books',bookRoutes)
+app.use('/books',bookRoutes)
 
 const announcementRoutes=require('./routes/announcement')
 
