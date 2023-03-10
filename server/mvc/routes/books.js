@@ -12,7 +12,11 @@ routes.get('/reg', bookDetail.bookDataFetching)
 routes.post('/find',bookDetail.bookFindDataFetching)
 routes.post('/purchase',bookDetail.bookPurchaseData)
 routes.post('/borrow',bookDetail.bookBorrowData)
-routes.post('/getborrow',bookDetail.getBookBorrowData)
+routes.get('/getborrow',bookDetail.getBookBorrowData)
 routes.post('/return',bookDetail.bookReturnData)
+routes.get('/getreturn',bookDetail.getBookReturnData)
+routes.get('/getpurchase',bookDetail.getBookPurchaseData)
+routes.post('/payfine',bookDetail.bookPayFine)
+
 
 module.exports = routes
