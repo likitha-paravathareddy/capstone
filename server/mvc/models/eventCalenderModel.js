@@ -6,19 +6,24 @@ const eventCalenderSchema=mongoose.Schema({
     title:{
         type:String
     },
-    note:{
+    date:{
         type:String
     },
-    type:{
+    time:{
         type:String
     },
-    startDate:{
-        type:Date
+    duration:{
+        type:Number
     },
-    endDate:{
-        type:Date
+    link:{
+        type:String
     }
 })
 
+// title: title,
+// date:date,
+// time:time,
+// duration:duration,
+// link:link
 let eventCalenderModel=mongoose.model('eventCalender',eventCalenderSchema)
 module.exports={eventCalenderModel}
