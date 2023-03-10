@@ -25,6 +25,8 @@ $(document).ready(function(){
     data1=JSON.parse(responseText.responseText)
     if(responseText.responseText!="0")
     {
+      
+      document.getElementById("output").src=data1[0].img
       document.getElementById("contacta").value=data1[0].contact
       document.getElementById("contacta").readOnly=true
       document.getElementById("dob").value=data1[0].dob
