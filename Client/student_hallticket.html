@@ -13,17 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
     <link rel="stylesheet" href="css/feather.css">
-    <link rel="stylesheet" href="css/select2.css">
-    <link rel="stylesheet" href="css/dropzone.css">
-    <link rel="stylesheet" href="css/uppy.min.css">
-    <link rel="stylesheet" href="css/jquery.steps.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/quill.snow.css">
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="css/daterangepicker.css">
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="hallticket.css">
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -84,7 +79,7 @@
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-              <a href="student_dashboard.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-home fe-16"></i>
                 <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
               </a>
@@ -102,7 +97,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="student_timetable.html"><span class="ml-1 item-text">timetable</span>
+                  <a class="nav-link pl-3" href="./ti"><span class="ml-1 item-text">timetable</span>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -139,9 +134,9 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="exam_payment.html"><span class="ml-1 item-text">exam fee</span></a>
-                  <a class="nav-link pl-3" href="./payment.html"><span class="ml-1 item-text">college fee</span></a>
-                  <a class="nav-link pl-3" href="./mypayments.html"><span class="ml-1 item-text">my payments</span></a>
+                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">exam fee</span></a>
+                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">college fee</span></a>
+                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">my payments</span></a>
                 </li>
                
               </ul>
@@ -207,59 +202,120 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h1 class="page-title">View Attendance</h1>
-
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <h4 class="card-title">Total Present Classes</h4>
-                      <h4 id="present">1</h4>
-                      <p id="total">out of 6</p>
+              <h1 class="page-title">Let's start</h1>
+              <section id = "notpaid">
+                <div class="container">
+                    <div class="admit-card">
+                        <div class="BoxA border- padding mar-bot"> 
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h5>MEWAR UNIVERSITY</h5>
+                                    <p>NH - 79 Gangrar Chittorgarh - 312901 <br> RAJASTHAN, INDIA</p>
+                                </div>
+                                <div class="col-sm-4 txt-center">
+                                    <img src="http://peoplehelp.in/mewaruni/assets/images/mewaruniversity.jpg" width="100px;" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5>Admit Card</h5>
+                                    <p>B.Tech - 2019</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="BoxC border- padding mar-bot">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Enrollment No : 9910101</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="BoxD border- padding mar-bot">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <table class="table table-bordered">
+                                      <tbody id = "details">
+                                        <tr>
+                                          <td><b>ENROLLMENT NO : 9910101</b></td>
+                                          <td><b>department: </b> B.TECH</td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Student Name: </b>Vinod Sharma</td>
+                                          <td><b>Sem: </b>M</td>
+                                        </tr>
+                                        <!-- <tr>
+                                          <td><b>Father/Husband Name: </b>SS Sharma</td>
+                                          <td><b>DOB: </b>02 Jul 2019</td>
+                                        </tr>
+                                        <tr>
+                                          <td colspan="2" style="    height: 125px;"><b>Address: </b>moh hasnxgxums , moh hasnxgxums, moh hasnxgxums</td>
+                                        </tr> -->
+                                      </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-2 txt-center">
+                                    <table class="table table-bordered">
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row txt-center"><img src="http://peoplehelp.in/mewaruni/assets/uploads/student_photo/cda1af3d3e81a4b46ef182a5336b778b.jpg" width="123px" height="165px" /></th>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row txt-center"><img src="http://peoplehelp.in/mewaruni/images/signature.png" /></th>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="BoxE border- padding mar-bot txt-center">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5>EXAMINATION VENUE</h5>
+                                    <p>NH - 79 Gangrar Chittorgarh - 312901 <br> RAJASTHAN, INDIA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="BoxF border- padding mar-bot txt-center">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Sr. No.</th>
+                                                <th>Subject/Paper</th>
+                                                <th>Exam Date</th>
+                                            </tr>
+                                        </thead>
+                                      <tbody id = "exam">
+                                        <!-- <tr>
+                                          <td>1</td>
+                                          <td>English</td>
+                                          <td>5 July 2019</td>
+                                        </tr>
+                                        <tr>
+                                          <td>2</td>
+                                          <td>English</td>
+                                          <td>5 July 2019</td>
+                                        </tr>
+                                        <tr>
+                                          <td>3</td>
+                                          <td>English</td>
+                                          <td>5 July 2019</td>
+                                        </tr> -->
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="txt-center">
+                            <p>*** MEWAR UNIVERSITY ***</p>
+                        </footer>
+                        
                     </div>
-                  </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <h4 class="card-title">Attendance Percentage</h4>
-                      <h4 id="percent">75%</h4>
-                      <p id="attend">you have adequate attendance improve more</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-              <table class="table datatables" id="dataTable-3">
-                        <thead>
-                          <tr>
-                            <th>Date</th>
-                            <th>Period 1</th>
-                            <th>Period 2</th>
-                            <th>Period 3</th>
-                            <th>Lesson 4</th>
-                            <th>Lesson 5</th>
-                          </tr>
-                        </thead>
-                        <tbody id="viewattend">
-                   
-                   
-                 
                 
-                          
-
-            </tbody>
-          </table>
-
+            </section>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
-        </div>
+        </div> <!-- .container-fluid -->
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -270,8 +326,8 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="list-group list-group-flush my-n3" id = "notification">
-                  <!-- <div class="list-group-item bg-transparent">
+                <div class="list-group list-group-flush my-n3">
+                  <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-box fe-24"></span>
@@ -282,8 +338,8 @@
                         <small class="badge badge-pill badge-light text-muted">1m ago</small>
                       </div>
                     </div>
-                  </div> -->
-                  <!-- <div class="list-group-item bg-transparent">
+                  </div>
+                  <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-download fe-24"></span>
@@ -294,8 +350,8 @@
                         <small class="badge badge-pill badge-light text-muted">2m ago</small>
                       </div>
                     </div>
-                  </div> -->
-                  <!-- <div class="list-group-item bg-transparent">
+                  </div>
+                  <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-inbox fe-24"></span>
@@ -305,9 +361,9 @@
                         <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
                         <small class="badge badge-pill badge-light text-muted">30m ago</small>
                       </div>
-                    </div>
-                  </div> -->
-                  <!-- <div class="list-group-item bg-transparent">
+                    </div> <!-- / .row -->
+                  </div>
+                  <div class="list-group-item bg-transparent">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <span class="fe fe-link fe-24"></span>
@@ -318,8 +374,8 @@
                         <small class="badge badge-pill badge-light text-muted">1h ago</small>
                       </div>
                     </div>
-                  </div>  -->
-                </div> 
+                  </div> <!-- / .row -->
+                </div> <!-- / .list-group -->
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
@@ -327,7 +383,6 @@
             </div>
           </div>
         </div>
-    
         <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -395,312 +450,8 @@
     <script src='js/jquery.stickOnScroll.js'></script>
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/topojson.min.js"></script>
-    <script src="js/datamaps.all.min.js"></script>
-    <script src="js/datamaps-zoomto.js"></script>
-    <script src="js/datamaps.custom.js"></script>
-    <script src="js/Chart.min.js"></script>
-    <script>
-      /* defind global options */
-      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-      Chart.defaults.global.defaultFontColor = colors.mutedColor;
-    </script>
-    <script src="js/gauge.min.js"></script>
-    <script src="js/jquery.sparkline.min.js"></script>
-    <script src="js/apexcharts.min.js"></script>
-    <script src="js/apexcharts.custom.js"></script>
-    <script src='js/jquery.mask.min.js'></script>
-    <script src='js/select2.min.js'></script>
-    <script src='js/jquery.steps.min.js'></script>
-    <script src='js/jquery.validate.min.js'></script>
-    <script src='js/jquery.timepicker.js'></script>
-    <script src='js/dropzone.min.js'></script>
-    <script src='js/uppy.min.js'></script>
-    <script src='js/quill.min.js'></script>
-    <script src='js/jquery.dataTables.min.js'></script>
-    <script src='js/dataTables.bootstrap4.min.js'></script>
-    <script src="view_attendance.js"></script>
-    <script>
-      $('.select2').select2(
-      {
-        theme: 'bootstrap4',
-      });
-      $('.select2-multi').select2(
-      {
-        multiple: true,
-        theme: 'bootstrap4',
-      });
-      $('.drgpicker').daterangepicker(
-      {
-        singleDatePicker: true,
-        timePicker: false,
-        showDropdowns: true,
-        locale:
-        {
-          format: 'MM/DD/YYYY'
-        }
-      });
-      $('.time-input').timepicker(
-      {
-        'scrollDefault': 'now',
-        'zindex': '9999' /* fix modal open */
-      });
-      /** date range picker */
-      if ($('.datetimes').length)
-      {
-        $('.datetimes').daterangepicker(
-        {
-          timePicker: true,
-          startDate: moment().startOf('hour'),
-          endDate: moment().startOf('hour').add(32, 'hour'),
-          locale:
-          {
-            format: 'M/DD hh:mm A'
-          }
-        });
-      }
-      var start = moment().subtract(29, 'days');
-      var end = moment();
-
-      function cb(start, end)
-      {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      }
-      $('#reportrange').daterangepicker(
-      {
-        startDate: start,
-        endDate: end,
-        ranges:
-        {
-          'Today': [moment(), moment()],
-          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
-          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        }
-      }, cb);
-      cb(start, end);
-      $('.input-placeholder').mask("00/00/0000",
-      {
-        placeholder: "__/__/____"
-      });
-      $('.input-zip').mask('00000-000',
-      {
-        placeholder: "____-___"
-      });
-      $('.input-money').mask("#.##0,00",
-      {
-        reverse: true
-      });
-      $('.input-phoneus').mask('(000) 000-0000');
-      $('.input-mixed').mask('AAA 000-S0S');
-      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
-      {
-        translation:
-        {
-          'Z':
-          {
-            pattern: /[0-9]/,
-            optional: true
-          }
-        },
-        placeholder: "___.___.___.___"
-      });
-      // editor
-      var editor = document.getElementById('editor');
-      if (editor)
-      {
-        var toolbarOptions = [
-          [
-          {
-            'font': []
-          }],
-          [
-          {
-            'header': [1, 2, 3, 4, 5, 6, false]
-          }],
-          ['bold', 'italic', 'underline', 'strike'],
-          ['blockquote', 'code-block'],
-          [
-          {
-            'header': 1
-          },
-          {
-            'header': 2
-          }],
-          [
-          {
-            'list': 'ordered'
-          },
-          {
-            'list': 'bullet'
-          }],
-          [
-          {
-            'script': 'sub'
-          },
-          {
-            'script': 'super'
-          }],
-          [
-          {
-            'indent': '-1'
-          },
-          {
-            'indent': '+1'
-          }], // outdent/indent
-          [
-          {
-            'direction': 'rtl'
-          }], // text direction
-          [
-          {
-            'color': []
-          },
-          {
-            'background': []
-          }], // dropdown with defaults from theme
-          [
-          {
-            'align': []
-          }],
-          ['clean'] // remove formatting button
-        ];
-        var quill = new Quill(editor,
-        {
-          modules:
-          {
-            toolbar: toolbarOptions
-          },
-          theme: 'snow'
-        });
-      }
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function()
-      {
-        'use strict';
-        window.addEventListener('load', function()
-        {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form)
-          {
-            form.addEventListener('submit', function(event)
-            {
-              if (form.checkValidity() === false)
-              {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-    <script>
-      var uptarg = document.getElementById('drag-drop-area');
-      if (uptarg)
-      {
-        var uppy = Uppy.Core().use(Uppy.Dashboard,
-        {
-          inline: true,
-          target: uptarg,
-          proudlyDisplayPoweredByUppy: false,
-          theme: 'dark',
-          width: 770,
-          height: 210,
-          plugins: ['Webcam']
-        }).use(Uppy.Tus,
-        {
-          endpoint: 'https://master.tus.io/files/'
-        });
-        uppy.on('complete', (result) =>
-        {
-          console.log('Upload complete! We’ve uploaded these files:', result.successful)
-        });
-      }
-    </script>
-     <script>
-      $("documnet").ready(async function () {
-      
-      studentId = JSON.parse(localStorage.getItem("student")).studentId
-      dues=[]
-      await $.get("http://localhost:8080/payments/reg",function(data1,status){
-            //console.log(data1[0].paid)
-            //console.log("heli")
-            for(i=0;i<data1.length;i++)
-            {
-              //console.log("heli")
-              //console.log(data1[i].paid)
-            if(data1[i].paid == 0)
-            {
-              dues.push(data1[i].studentId)
-             // num = sub.indexOf(course)
-
-            }
-          }
-          })
-        
-          console.log(dues)
-      $.get("http://localhost:8080/announce/reg",function(data,status){
-       console.log(data)
-      
-
-        for(i=0;i<data.length;i++)
-        {
-          if(data[i].to == "all")
-       {
-          template= `<div class="list-group-item bg-transparent">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <span class="fe fe-box fe-24"></span>
-                      </div>
-                      <div class="col">
-                        <small><strong>${data[i].title}</strong></small>
-                        <div class="my-0 text-muted small">${data[i].message}</div>
-                        
-                      </div>
-                    </div>
-                  </div>`;
-                  $("#notification").append(template)
-        }
-        //dues=[]
-        if(data[i].to = "fee_dues")
-        {
-          //console.log(data[i].to)
-        
-          num = dues.indexOf(studentId)
-          console.log(num)
-          if(num>=0)
-          {
-            template= `<div class="list-group-item bg-transparent">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <span class="fe fe-box fe-24"></span>
-                      </div>
-                      <div class="col">
-                        <small><strong>${data[i].title}</strong></small>
-                        <div class="my-0 text-muted small">${data[i].message}</div>
-                        
-                      </div>
-                    </div>
-                  </div>`;
-                  $("#notification").append(template)
-          }
-        }
-        
-       
-      }
-    
-
-      })
-    })
-    </script>
     <script src="js/apps.js"></script>
+    <script src="student_hallticket.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
