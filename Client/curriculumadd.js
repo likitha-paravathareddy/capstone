@@ -17,7 +17,7 @@ function addTopic()
       <input type="text" class="form-control" placeholder="Pdf Link...">
     </div>
   </div>`;
-      $('#topicdiv').append(new_input);
+      $('#topictab').append(new_input);
 }
 
 function addForm()
@@ -39,5 +39,5 @@ function addForm()
       <input type="text" class="form-control" placeholder="Pdf Link...">
     </div>
   </div>`;
-      $('#course_card').append(new_form);
+      $('#topictab').append(new_form);
 }

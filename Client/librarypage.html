@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+    <title>Library Page</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
     <!-- Fonts CSS -->
@@ -201,52 +201,31 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h1 class="page-title">Add Courses</h1>
+              <h1 class="page-title">Library Books</h1>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
-        <button class="btn btn-primary" onclick="window.location.href='../client/addingcurr.html'">Add Course</button>
-        <div class="card-deck">
-            <div class="card shadow mb-4">
-              <div class="card-header">
-                <strong class="card-title">Course Form</strong>
-              </div>
-              <div class="card-body" id="course_card">
-                <form>
-                    <div class="form-group">
-                        <label for="subjectname"></label>
-                        <div class="row">
-                        <input type="text" class="form-control" id="subjectName" placeholder="Subject Name...">
-                        <br><br>
-                        <button class="btn btn-info" onclick="addForm()" id="add-subject">+</button>
-                    </div>
-                    <div id="topicdiv">
-                    <div class="form-group">
-                        <label for="topicname"></label>
-                        <div class="row">
-                        <input type="text" class="form-control" id="topicname" placeholder="Topic Name...">
-                        <br><br>
-                        <button class="btn btn-info" onclick="addTopic()" id="add-subject">+</button>
-                    </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="vidlink">Video Link</label>
-                          <input type="text" class="form-control" id="vidlink" placeholder="Video Link...">
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label for="pdflink">Pdf Link</label>
-                          <input type="text" class="form-control" id="pdflink" placeholder="Pdf Link...">
-                        </div>
-                      </div>
-                    </div>
-                    </form>
-                    <form id="topictab">
+        <br><br>
+        <h5>Popular Books today</h5>
 
-                    </form>
+        <br><br>
+        <div class="col-12 mb-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <p><table class="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="../Client/assets/images/mockingbird.jpg" height="150" alt="">
+                            </td>
+                            <td> <b>To Kill A Mockingbird</b> <br> To Kill a Mockingbird, novel by American author Harper Lee, published in 1960. Enormously popular, it was translated into some 40 languages, sold more than 40 million copies worldwide, and is one of the most-assigned novels in American schools. In 1961 it won a Pulitzer Prize. The novel was praised for its sensitive treatment of a child’s awakening to racism and prejudice in the American South. <br> <button style="margin-top:1%;" class="btn btn-primary">Borrow</button> </td>
+                            
+                        </tr>
+                    </tbody>
+                </table></p>
               </div>
             </div>
-            </div>
+          </div>
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -382,7 +361,6 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
-    <script src="../Client/curriculumadd.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
