@@ -30,6 +30,7 @@ $(document).ready(async function(){
           }
           else
           {
+                document.getElementById("num").innerHTML= `<h5>Enrollment No : ${rollNo}</h5>`
                 document.getElementById("details").innerHTML = ` <tr>
                 <td><b>ENROLLMENT NO : ${rollNo}</b></td>
                 <td><b>department: </b> ${branch}</td>
@@ -38,6 +39,26 @@ $(document).ready(async function(){
                 <td><b>Student Name: </b>${name1}</td>
                 <td><b>Sem: </b>${semester}</td>
               </tr>`;
+
+              $.get("http://localhost:8080/profile/reg",function(data2,status){
+
+              for(i=0;i<data2.length;i++)
+              {
+                console.log("dgshj")
+                if(data2[i].rollnumber==rollNo)
+                {
+                    console.log("dgshj")
+
+                template2 = `  <tr>
+              <th scope="row txt-center"><img src="${data2[i].img}" width="123px" height="165px" /></th>
+            </tr>`;
+            $("#photo").append(template2)
+                }
+        
+            }
+               
+
+              })
 
               $.get("http://localhost:8080/hallticket/reg",function(data,status){
                 for(i=0;i<data.length;i++)

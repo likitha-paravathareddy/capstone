@@ -59,7 +59,8 @@ const fineSchema=mongoose.Schema({
         type:Number
     },
     paidAt:{
-        type:Date
+        type:Date,
+        default:1678387709373
     }
 })
 let borrowModel=mongoose.model("borrowbooks",borrowSchema)
