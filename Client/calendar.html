@@ -7,13 +7,13 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
-    <!-- Simple bar CSS -->
+  
     <link rel="stylesheet" href="css/simplebar.css">
-    <!-- Fonts CSS -->
+
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Icons CSS -->
+  
     <link rel="stylesheet" href="css/feather.css">
-    <!-- FullCalendar CSS -->
+   
     <link rel="stylesheet" href="css/fullcalendar.css">
     <link rel="stylesheet" href="css/select2.css">
     <link rel="stylesheet" href="css/dropzone.css">
@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="css/jquery.steps.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
     <link rel="stylesheet" href="css/quill.snow.css">
-    <!-- Date Range Picker CSS -->
+ 
     <link rel="stylesheet" href="css/daterangepicker.css">
-    <!-- App CSS -->
+
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
   </head>
@@ -72,7 +72,7 @@
           <i class="fe fe-x"><span class="sr-only"></span></i>
         </a>
         <nav class="vertnav navbar navbar-light">
-          <!-- nav bar -->
+
           <div class="w-100 mb-4 d-flex">
             <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
               <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
@@ -374,11 +374,11 @@
                 </div>
                 <div class="col-auto">
                   <button type="button" class="btn" data-toggle="modal" data-target=".modal-calendar"><span class="fe fe-filter fe-16 text-muted"></span></button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>New Event</button>
+                  <button type="submit" class="btn btn-primary" data-toggle="modal" id = "add" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>New Event</button>
                 </div>
               </div>
               <div id='calendar'></div>
-              <!-- new event modal -->
+           
               <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -402,8 +402,8 @@
                           <div class="form-group col-md-8">
                             <label for="eventType">Event type</label>
                             <select id="eventType" class="form-control select2">
-                              <option value="work">Work</option>
-                              <option value="home">Home</option>
+                              <option value="work">myself</option>
+                              <option value="home">everyone</option>
                             </select>
                           </div>
                         </div>
@@ -414,39 +414,23 @@
                               <div class="input-group-prepend">
                                 <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
                               </div>
-                              <input type="text" class="form-control drgpicker" id="drgpicker-start" value="04/24/2020">
+                              <input type="text" class="form-control drgpicker" id="drgpicker-start">
                             </div>
                           </div>
-                          <div class="form-group col-md-6">
-                            <label for="startDate">Start Time</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text" id="button-addon-time"><span class="fe fe-clock fe-16"></span></div>
-                              </div>
-                              <input type="text" class="form-control time-input" id="start-time" placeholder="10:00 AM">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="date-input1">End Date</label>
                             <div class="input-group">
                               <div class="input-group-prepend">
                                 <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
                               </div>
-                              <input type="text" class="form-control drgpicker" id="drgpicker-end" value="04/24/2020">
-                            </div>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="startDate">End Time</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text" id="button-addon-time"><span class="fe fe-clock fe-16"></span></div>
-                              </div>
-                              <input type="text" class="form-control time-input" id="end-time" placeholder="11:00 AM">
+                              <input type="text" class="form-control drgpicker" id="drgpicker-end">
                             </div>
                           </div>
                         </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            
+                     
                       </form>
                     </div>
                     <div class="modal-footer d-flex justify-content-between">
@@ -454,14 +438,14 @@
                         <input type="checkbox" class="custom-control-input" id="RepeatSwitch" checked>
                         <label class="custom-control-label" for="RepeatSwitch">All day</label>
                       </div>
-                      <button type="button" class="btn mb-2 btn-primary">Save Event</button>
+                      <button type="button" class="btn mb-2 btn-primary" id = "save">Save Event</button>
                     </div>
                   </div>
                 </div>
-              </div> <!-- new event modal -->
-            </div> <!-- .col-12 -->
-          </div> <!-- .row -->
-        </div> <!-- .container-fluid -->
+              </div>
+            </div> 
+          </div> 
+        </div>
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -639,6 +623,7 @@
     <script src='js/dropzone.min.js'></script>
     <script src='js/uppy.min.js'></script>
     <script src='js/quill.min.js'></script>
+    <script src='calender.js'></script>
     <script>
       $('.select2').select2(
       {
@@ -855,5 +840,6 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
     </script>
+     
   </body>
 </html>

@@ -82,6 +82,15 @@ const announcementRoutes=require('./routes/announcement')
 
 app.use('/announce',announcementRoutes)
 
+
+const hallticketRoutes=require('./routes/hallticket')
+
+app.use('/hallticket',hallticketRoutes)
+
+
+const eventsRoutes=require('./routes/eventCalender')
+
+app.use('/calenderEvents',eventsRoutes)
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/faculty", require("./routes/facultyRoutes"));
 app.use(errorHandler);
