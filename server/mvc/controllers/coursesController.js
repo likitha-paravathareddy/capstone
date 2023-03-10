@@ -2,24 +2,59 @@ const coursesModelCtrl=require('../models/coursesModel')
 
 async function coursesRegistrationController(req,res){
     console.log(req.body)
-    let coursesData=coursesModelCtrl.coursesModel
+    await coursesModelCtrl.coursesModel.find({}).then((docs)=>{
+        if(docs.length>0)
+        {
+            const unitName=req.body.curriculum[0].unitName;
+            const topics=req.body.curriculum[0].topics;
+        
+            console.log(unitName)
+            console.log(topics)
+            
+            coursesModelCtrl.coursesModel.updateOne({courseName:req.body.courseName},{$push:{curriculum:{unitName:unitName,topics:topics}}}).then(()=>{
+                res.send("sent");
+            }).catch((err)=>{
+                res.send(err);
+            })  
+        }
+        else{
+            let coursesData=coursesModelCtrl.coursesModel
     ({
+       
         courseName:req.body.courseName,
         departmentName:req.body.departmentName,
-        curriculum : req.body.curriculum,
+        curriculum : [],
         assignedTeachers : req.body.assignedTeachers,
         link:req.body.link,
         notes:req.body.notes
     })
     // console.log(subjectCode_data)
   
-            coursesData.save().then(()=>{
+          coursesData.save().then(()=>{
+                console.log("sent");
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+            const unitName=req.body.curriculum[0].unitName;
+            const topics=req.body.curriculum[0].topics;
+        
+            console.log(unitName)
+            console.log(topics)
+            
+        coursesModelCtrl.coursesModel.updateOne({courseName:req.body.courseName},{$push:{curriculum:{unitName:unitName,topics:topics}}}).then(()=>{
                 res.send("sent");
             }).catch((err)=>{
                 res.send(err);
-            })
-            
-        
+            })  
+
+        }
+    }).catch((err)=>{
+        res.send("bad request")
+    });
+    
+    
+  
 }
 
 async function coursesDataFetching(req,res){
