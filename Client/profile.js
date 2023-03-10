@@ -25,7 +25,8 @@ $(document).ready(function(){
     data1=JSON.parse(responseText.responseText)
     if(responseText.responseText!="0")
     {
-      
+      localStorage.setItem("images",data1[0].img)
+      document.getElementById("source").src=data1[0].img
       document.getElementById("output").src=data1[0].img
       document.getElementById("contacta").value=data1[0].contact
       document.getElementById("contacta").readOnly=true
@@ -67,7 +68,7 @@ $(document).ready(function(){
       success: function (res) {
         image=res
         // alert(image)
-   
+   localStorage.setItem("images",image)
     var contact = $("#contacta").val();
     var dob = $("#dob").val();
     var gender = $("#gender").val();
