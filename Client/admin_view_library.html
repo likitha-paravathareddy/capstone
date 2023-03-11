@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Library Page</title>
+    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
     <!-- Fonts CSS -->
@@ -78,7 +78,7 @@
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-              <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <a href="admin_dashboard.html" data-toggle="collapse" aria-expanded="false">
                 <i class="fe fe-home fe-16"></i>
                 <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
               </a>
@@ -89,110 +89,54 @@
             <span>Components</span>
           </p>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item dropdown">
-              <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-box fe-16"></i>
-                <span class="ml-3 item-text">Academics</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./ti"><span class="ml-1 item-text">timetable</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./student_results.html"><span class="ml-1 item-text">results</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./courses.html"><span class="ml-1 item-text">Courses</span></a>
-                </li>
-              </ul>
-            </li>
-           
-            <li class="nav-item dropdown">
-              <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-credit-card fe-16"></i>
-                <span class="ml-3 item-text">Examination</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="forms">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_elements.html"><span class="ml-1 item-text">Timetable</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_advanced.html"><span class="ml-1 item-text">HallTicket</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_validation.html"><span class="ml-1 item-text">queries</span></a>
-                </li>
-              
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-grid fe-16"></i>
-                <span class="ml-3 item-text">Payments</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="tables">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">exam fee</span></a>
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">college fee</span></a>
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">my payments</span></a>
-                </li>
-               
-              </ul>
-            </li>
-           
-          </ul>
-          <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Apps</span>
-          </p>
-          <ul class="navbar-nav flex-fill w-100 mb-2">
+      
             <li class="nav-item w-100">
-              <a class="nav-link" href="calendar.html">
-                <i class="fe fe-calendar fe-16"></i>
-                <span class="ml-3 item-text">Calendar</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-book fe-16"></i>
-                <span class="ml-3 item-text">About</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="contact">
-                <a class="nav-link pl-3" href="./contacts-list.html"><span class="ml-1">about college</span></a>
-                <a class="nav-link pl-3" href="./contacts-grid.html"><span class="ml-1">Contact Details</span></a>
-               
-              </ul>
-            </li>
+                <a class="nav-link" href="admin_view_users.html">
+                    <i class="fe fe-box fe-16"></i>
+                  <span class="ml-3 item-text">users</span>
+                  <span class="badge badge-pill badge-primary">New</span>
+                </a>
+              </li>
+
+              <li class="nav-item w-100">
+                <a class="nav-link" href="admin_view_faculty.html">
+                    <i class="fe fe-credit-card fe-16"></i>
+                  <span class="ml-3 item-text">Faculty</span>
+                  
+                </a>
+              </li>
+
+              <li class="nav-item w-100">
+                <a class="nav-link" href="#">
+                    <i class="fe fe-grid fe-16"></i>
+                  <span class="ml-3 item-text">Add Courses</span>
+                  
+                </a>
+              </li>
+
+              <li class="nav-item w-100">
+                <a class="nav-link" href="announcements.html">
+                    <i class="fe fe-user fe-16"></i>
+                  <span class="ml-3 item-text">Announcements</span>
+                  
+                </a>
+
+                <li class="nav-item dropdown">
+                    <a href="#profile" data-toggle="collapse" aria-expanded="false" class="nav-link w-100">
+                        <i class="fe fe-layout fe-16"></i>
+                      <span class="ml-3 item-text">Payments</span>
+                    </a>
+                  
+                  </li>
+              </li>
+
            
-            <li class="nav-item dropdown">
-              <a href="#profile" data-toggle="collapse" aria-expanded="false" class="nav-link w-100">
-                <i class="fe fe-user fe-16"></i>
-                <span class="ml-3 item-text">Profile</span>
-              </a>
-            
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#profile" data-toggle="collapse" aria-expanded="false" class="nav-link w-100">
-                <i class="fe fe-layout fe-16"></i>
-                <span class="ml-3 item-text">Chat</span>
-              </a>
-            
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#profile" data-toggle="collapse" aria-expanded="false" class="nav-link w-100">
-                <i class="fe fe-user fe-16"></i>
-                <span class="ml-3 item-text">Feedback</span>
-              </a>
-            
-            </li>
-            
           </ul>
+        
+
           
             
-            </li>
-           
-            
-          </ul>
+        
           
          
         </nav>
@@ -201,40 +145,21 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h1 class="page-title">Library Books</h1>
+                <table class="table">
+                    <thead class="table-dark">
+                      <td>BookName</td>
+                      <td>AuthorName</td>
+                      <td>Publisher</td>
+                      <td>Genres</td>
+                      <td>Quantity</td>
+                      <td>Price</td>
+                    </thead>
+                    <tbody id="libadd">
+                    </tbody>
+                  </table>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
-        <br><br>
-        <h5>Popular Books today</h5>
-
-        <br><br>
-        <div class="col-12 mb-4">
-            <div class="card shadow">
-              <div class="card-body">
-                <p><table class="table">
-                    <tbody id="addlib">
-                    </tbody>
-                </table>
-                <div class="modal fade" id="borrowModal" tabindex="-1" role="dialog" aria-labelledby="verticalModalTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body"> Book Borrowed Successfully </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </p>
-              </div>
-            </div>
-          </div>
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -370,7 +295,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
-    <script src="librarypage.js"></script>
+    <script src="admin_view_library.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

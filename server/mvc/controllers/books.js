@@ -116,30 +116,27 @@ async function bookBorrowData(req,res){
         console.log(docs.length)
         if(docs.length>0)
         {
-            if(docs[0].isbn=="available"){
+            if(docs[0].quantity>0){
                 let borrowData=bookModelCtrl.borrowModel
                 ({
                     user_id:req.body.user_id,
                     book_name:req.body.book_name,
                     borrowedDate:req.body.borrowedDate
                 })
-                bookData.save().then(()=>{
-                    res.send("sent");
+                borrowData.save().then(()=>{
+                    console.log("sent");
                 }).catch((err)=>{
-                    res.send(err);
+                    console.log("error");
                 })
-                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{isbn:"borrowed"}).then(()=>{
-                    res.send("sent");
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{quantity:quantity-1}).then(()=>{
+                    console.log("sent");
                 }).catch((err)=>{
-                    res.send(err);
+                    console.log(err);
                 })
             }
             else{
                 res.send("Book is not available to borrow")
             }
-        }
-        else{
-            res.send("0")
         }
     }).catch((err)=>{
         res.send("bad request")
@@ -170,7 +167,7 @@ async function bookReturnData(req,res){
                 }).catch((err)=>{
                     res.send(err);
                 })
-                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{isbn:"available"}).then(()=>{
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{quantity:quantity+1}).then(()=>{
                     res.send("sent");
                 }).catch((err)=>{
                     res.send(err);
@@ -259,5 +256,11 @@ async function bookPayFine(req,res){
         res.send(err);
     })    
 }
-
-module.exports={ uploadimgHandler,bookFindDataFetching,bookPurchaseData,getBookPurchaseData ,bookBorrowData,getBookBorrowData,bookReturnData,getBookReturnData,bookPayFine,bookRegistrationController , bookDataFetching }
+async function bookFineData(req,res){
+    bookModelCtrl.fineModel.find({}).then((docs)=>{
+        res.send(docs);
+    }).catch((err)=>{
+        res.send(err);
+    })    
+}
+module.exports={ uploadimgHandler,bookFindDataFetching,bookPurchaseData,getBookPurchaseData ,bookFineData,bookBorrowData,getBookBorrowData,bookReturnData,getBookReturnData,bookPayFine,bookRegistrationController , bookDataFetching }

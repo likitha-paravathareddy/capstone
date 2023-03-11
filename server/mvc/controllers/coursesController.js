@@ -1,12 +1,13 @@
 const coursesModelCtrl=require('../models/coursesModel')
 
 async function coursesRegistrationController(req,res){
-    console.log(req.body)
-    await coursesModelCtrl.coursesModel.find({}).then((docs)=>{
+    // console.log(req.body)
+    await coursesModelCtrl.coursesModel.find({courseName:req.body.courseName}).then((docs)=>{
         if(docs.length>0)
         {
             const unitName=req.body.curriculum[0].unitName;
             const topics=req.body.curriculum[0].topics;
+            console.log(topics)
         
             console.log(unitName)
             console.log(topics)
@@ -28,25 +29,25 @@ async function coursesRegistrationController(req,res){
         link:req.body.link,
         notes:req.body.notes
     })
-    // console.log(subjectCode_data)
+    console.log(coursesData)
   
           coursesData.save().then(()=>{
                 console.log("sent");
+                const unitName=req.body.curriculum[0].unitName;
+                const topics=req.body.curriculum[0].topics;
+            
+                console.log(unitName)
+                console.log(topics)
+                
+            coursesModelCtrl.coursesModel.updateOne({courseName:req.body.courseName},{$push:{curriculum:{unitName:unitName,topics:topics}}}).then(()=>{
+                    res.send("sent");
+                }).catch((err)=>{
+                    res.send(err);
+                })  
             }).catch((err)=>{
                 console.log(err);
             })
 
-            const unitName=req.body.curriculum[0].unitName;
-            const topics=req.body.curriculum[0].topics;
-        
-            console.log(unitName)
-            console.log(topics)
-            
-        coursesModelCtrl.coursesModel.updateOne({courseName:req.body.courseName},{$push:{curriculum:{unitName:unitName,topics:topics}}}).then(()=>{
-                res.send("sent");
-            }).catch((err)=>{
-                res.send(err);
-            })  
 
         }
     }).catch((err)=>{

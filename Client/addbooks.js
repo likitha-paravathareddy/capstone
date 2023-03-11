@@ -19,7 +19,7 @@ $(document).ready(function(){
       headers: {},
       success: function (res) {
         images=res
-        alert(images)
+        // alert(images)
     var book_name = $("#book-name").val();
     var genres = $("#example-select").val();
     var price= $("#price").val();
@@ -46,7 +46,7 @@ $(document).ready(function(){
       }
    });
    $.post(url, dat13, function (xhr, status, responseText){
-    alert(responseText.responseText)
+    // alert(responseText.responseText)
 
    })
 }
