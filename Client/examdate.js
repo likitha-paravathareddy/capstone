@@ -1,7 +1,9 @@
 
-
+var branch
+var sem
+var subj=[]
 $("#go").click(() => {
-    console.log("dfghj")
+    
     branch =document.getElementById("branch").value;
     sem = document.getElementById("sem").value;
 
@@ -40,7 +42,7 @@ $("#go").click(() => {
                 <div class="form-group mb-3">
                     <label for="example-select">Subject</label>
                     <select class="form-control" id="subject">
-                      <option value = ${subj[j]}>${subj[j]}</option>
+                      <option id="${subj[j]}" value = ${subj[j]}>${subj[j]}</option>
                      
                     </select>
                   </div>
@@ -48,12 +50,43 @@ $("#go").click(() => {
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label for="example-email">Date</label>
-                <input type="date" id="doe" name="doe" class="form-control" placeholder="Date Of Exam">
+                <input type="date" id="${subj[j]}date" name="doe" class="form-control" placeholder="Date Of Exam">
             </div>
               </div>` ;
                $("#display").append(template);
             }
             
+    })
+    $("#submit1").click(function(){
+        subject=[]
+        for(let i=0;i<subj.length;i++){
+            val=subj[i]
+            vald=subj[i]+"date"
+            name=document.getElementById(val).value
+            date=document.getElementById(vald).value
+            var sets={
+                name:name,
+                date:date
+            }
+            subject.push(sets)
+        }
+        var dat18={
+            semester:sem,
+            branch:branch,
+            subjects:subject
+        }
+     
+        dat18=JSON.stringify(dat18)
+        var url="http://127.0.0.1:8080/hallticket/reg"
+        $.ajaxSetup({
+            headers: {
+               'Content-Type': 'application/json',
+               'Accept': 'application/json'
+            }
+         });
+         $.post(url, dat18, function (xhr, status, responseText){
+            alert(responseText.responseText)
+         })
     })
 
 })

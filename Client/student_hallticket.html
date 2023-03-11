@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
     <link rel="stylesheet" href="hallticket.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -204,7 +205,7 @@
             <div class="col-12">
            
               <section id = "notpaid">
-                <div class="container">
+                <div class="container" id="downhall">
                     <div class="admit-card">
                         <div class="BoxA border- padding mar-bot"> 
                             <div class="row">
@@ -293,6 +294,24 @@
                                         </tr> -->
                                       </tbody>
                                     </table>
+                                   
+                                    
+
+                                    <script>
+                                      async function generatePDF() {
+                              
+                              const element = document.getElementById("downhall");
+                              var opt = {
+                                  margin: 0,
+                                  filename: 'hallticket.pdf',
+                                  image: { type: 'jpeg', quality: 0.98 },
+                                  html2canvas: { scale: 1, width: 900, height: 1000 },
+                                  jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                              }
+                              await html2pdf(element, opt);
+                              
+                              }
+                              </script>
                                 </div>
                             </div>
                         </div>
@@ -302,6 +321,8 @@
                         
                     </div>
                 </div>
+                <br>
+                <input type="button" value="download" id="download" style="margin-left:15px;margin-right:auto;align-items:center" onclick="generatePDF()"></button>
                 
             </section>
             </div> <!-- .col-12 -->

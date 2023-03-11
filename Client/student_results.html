@@ -20,6 +20,7 @@
     
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
     <link rel="stylesheet" href="student_results.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -202,7 +203,7 @@
       <main role="main" class="main-content">
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col-12" >
                 <form>
                     <div class="form-group">
                       <label for="options">Select an option:</label>
@@ -215,7 +216,7 @@
                     </div>
                     <button type="button" id = "sub1" style="margin-top: -2%; margin-left: 62%">Submit</button>
                   </form>
-                  
+              <div id="downresults">    
               <div class="container">
                 <h1>Engineering Student Marks Report</h1>
                 <div class="details">
@@ -245,9 +246,31 @@
         
                
               </tbody>
+
+           
+              
             </div>
               </table>
+            </div>
               </div>
+              <br>
+              <br>
+              <input type="button" value="download" id="download" style="margin-left:15px;margin-right:auto;align-items:center" onclick="generatePDF()"></button>
+              <script>
+                async function generatePDF() {
+        
+        const element = document.getElementById("downresults");
+        var opt = {
+            margin: 0,
+            filename: 'results.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 1, width: 900, height: 1000 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        }
+        await html2pdf(element, opt);
+        
+        }
+        </script>
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
