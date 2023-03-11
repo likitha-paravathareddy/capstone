@@ -1,0 +1,73 @@
+ <script>
+      /** full calendar */
+      var calendarEl = document.getElementById('calendar');
+        var calender = document.addEventListener('DOMContentLoaded', function () {
+          var calendar = new FullCalendar.Calendar(calendarEl,
+            {
+              plugins: ['dayGrid', 'timeGrid', 'list', 'bootstrap'],
+              timeZone: 'UTC',
+              themeSystem: 'bootstrap',
+              header:
+              {
+                left: 'today, prev, next',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+              },
+              buttonIcons:
+              {
+                prev: 'fe-arrow-left',
+                next: 'fe-arrow-right',
+                prevYear: 'left-double-arrow',
+                nextYear: 'right-double-arrow'
+              },
+              weekNumbers: true,
+              eventLimit: true,
+              initialView: 'dayGridMonth',
+              events: [],
+              eventClick: function (info) {
+                if (info.event.url) {
+                  window.open(info.event.url);
+                  info.jsEvent.preventDefault();
+                } else {
+
+                  var detailsEl = document.createElement('div');
+                  detailsEl.className = 'event-details';
+                  var titleEl = document.createElement('div');
+                  var br = document.createElement('br')
+                  titleEl.className = 'event-title';
+                  titleEl.textContent = info.event.title;
+                  var timeEl = document.createElement('div');
+                  timeEl.className = 'event-time';
+                  timeEl.textContent = info.event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                  detailsEl.appendChild(titleEl);
+
+                  detailsEl.appendChild(timeEl);
+                  document.body.appendChild(detailsEl);
+                  document.body.appendChild(br)
+                  setTimeout(function () {
+                    document.body.removeChild(detailsEl);
+                  }, 3000);
+                }
+
+              },
+              eventMouseEnter: function (info) {
+                info.el.style.backgroundColor = 'green';
+              },
+            })
+          fetch('http://localhost:8080/calenderEvents/reg')
+            .then(response => response.json())
+            .then(data => {
+              console.log(data)
+              // Convert the date and time strings to Date objects
+              data.forEach(event => {
+                var dateTime = event.date + 'T' + event.time;
+                event.start = new Date(dateTime);
+                event.end = new Date(new Date(dateTime).getTime() + event.duration * 60 * 1000);
+                event.url = event.link; // Set the URL property to the link
+              });
+              calendar.setOption('events', data);
+              
+              calendar.render();
+            });
+        })
+    </script>

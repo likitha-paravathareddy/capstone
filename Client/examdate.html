@@ -198,72 +198,48 @@
         </nav>
       </aside>
       <main role="main" class="main-content">
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <h1 class="page-title">Add Exam Date</h1>
-            </div> <!-- .col-12 -->
-          </div> <!-- .row -->
-        </div> <!-- .container-fluid -->
+      <!-- .container-fluid -->
         <br>
         <br>
         <div class="row">
         <div class="form-group mb-3">
             <label for="example-select">Department</label>
-            <select class="form-control" id="example-select">
-              <option>CSE</option>
-              <option>IT</option>
-              <option>EEE</option>
-              <option>ECE</option>
-              <option>MECHANICAL</option>
-              <option>BIOTECH</option>
+            <select class="form-control" id="branch">
+              <option value="cse">CSE</option>
+              <option value="it">IT</option>
+              <option value="eee">EEE</option>
+              <option value="ece">ECE</option>
+              <option value="mechanical">MECHANICAL</option>
+              <option value="biotech">BIOTECH</option>
             </select>
           </div>
           <div class="form-group mb-3">
             <label for="example-select">Semester</label>
-            <select class="form-control" id="example-select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
+            <select class="form-control" id="sem">
+              <option value="semester1">1</option>
+              <option value="semester2">2</option>
+              <option value="semester3">3</option>
+              <option value="semester4">4</option>
+              <option value="semester5">5</option>
+              <option value="semester6">6</option>
+              <option value="semester7">7</option>
+              <option value="semester8">8</option>
             </select>
           </div>
           
         </div>
-        <button class="btn btn-primary" style="margin-top:1%; margin-bottom: 2%;">Go</button>
+        <button class="btn btn-primary" type= "button" id="go" style="margin-top:1%; margin-bottom: 2%;">Go</button>
         
         <div class="card shadow mb-4">
             <div class="card-header">
               <strong class="card-title">Exam Dates</strong>
             </div>
             <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group mb-3">
-                        <label for="example-select">Subject</label>
-                        <select class="form-control" id="example-select">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                        </select>
-                      </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group mb-3">
-                    <label for="example-email">Date</label>
-                    <input type="date" id="doe" name="doe" class="form-control" placeholder="Date Of Exam">
-                </div>
+              <div class="row" id = "display">
+   
+                        
                   </div>
-                  </div>
+                  
                   <button class="btn btn-primary" style="margin-top:1%; margin-bottom: 2%;">Submit</button>
               </div>
               
@@ -819,6 +795,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
+    <script src="examdate.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

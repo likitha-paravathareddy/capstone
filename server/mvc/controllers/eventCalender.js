@@ -5,10 +5,10 @@ async function RegistrationController(req,res){
     let eventData=eventModelCtrl.eventCalenderModel
     ({
         title:req.body.title,
-        note:req.body.note,
-        type:req.body.type,
-        startDate : req.body.startDate,
-        endDate: req.body.endDate
+        date:req.body.date,
+        time:req.body.time,
+        duration : req.body.duration,
+        link: req.body.link
        
     })
     // console.log(result_data)
