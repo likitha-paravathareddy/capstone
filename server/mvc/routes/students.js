@@ -10,5 +10,6 @@ const studentDetail = require('../controllers/students')
 routes.post('/reg', studentDetail.studentRegistrationController)
 routes.get('/reg', studentDetail.studentDataFetching)
 routes.post("/login", studentDetail.loginUser);
+routes.post("/change", studentDetail.changePassword);
 
 module.exports = routes
