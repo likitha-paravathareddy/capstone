@@ -1,15 +1,27 @@
 const logn = document.getElementById("submit");
 logn.addEventListener("click", () => {
+
     console.log("hello")
   studentId = document.getElementById("studentId").value;
   password = document.getElementById("password").value;
+
+
  
   document.getElementById("studentId").value = "";
   document.getElementById("password").value = "";
 
   //localStorage.setItem('studentId', studentId);
 
-  login(studentId, password);})
+  if(studentId=="admin" && password=="admin123")
+  {
+    window.open("admin_dashboard.html")
+  }
+  else{login(studentId, password);}
+
+  
+})
+
+  
   
 
 
@@ -41,5 +53,6 @@ logn.addEventListener("click", () => {
           );
         }
       });
+    
     }
     

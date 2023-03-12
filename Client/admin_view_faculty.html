@@ -151,7 +151,7 @@
 
 
 
-
+                <button class="btn btn-primary" style="float:right; margin-bottom : 2%;" type="button" id ="add">Add faculty</button>
 
 
 
@@ -314,6 +314,11 @@
     <script src='js/jquery.dataTables.min.js'></script>
     <script src='js/dataTables.bootstrap4.min.js'></script>
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script>
+         $("#add").click(() => {
+          window.location.href = "faculty_registration.html"
+         })
+    </script>
     <script>
       $('#dataTable-1').DataTable(
       {
