@@ -9,6 +9,7 @@ const studentDetail = require('../controllers/students')
 
 routes.post('/reg', studentDetail.studentRegistrationController)
 routes.get('/reg', studentDetail.studentDataFetching)
+routes.post('/agg', studentDetail.countStudents)
 routes.post("/login", studentDetail.loginUser);
 routes.post("/change", studentDetail.changePassword);
 

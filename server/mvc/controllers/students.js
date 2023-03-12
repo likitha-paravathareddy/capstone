@@ -162,5 +162,20 @@ const loginUser = asyncHandler(async (req, res) => {
     }
   });
 
+  async function countStudents(req,res){
+    //branch = req.body.branch
+    //console.log(branch)
+    studentModelCtrl.studentModel.aggregate([{$group:{_id:"$branch",count:{$sum:1}}}],(err,docs)=>{
+        if(err){
+            res.send("Something went wrong!");
+        }
+        else{
+          console.log(docs[0].count)
+            res.send(docs)
+        }
+    })
 
-module.exports={ studentRegistrationController , loginUser, changePassword,studentDataFetching}
+}
+
+
+module.exports={ studentRegistrationController , loginUser, changePassword,studentDataFetching,countStudents}

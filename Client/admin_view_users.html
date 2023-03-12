@@ -148,7 +148,7 @@
                 <br>
                 <br>
                 <br>
-
+               
 
 
 
@@ -173,6 +173,30 @@
 
             </tbody>
           </table>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <div class="row">
+            <div class="form-group mb-3">
+                <label for="example-select">Department</label>
+                <select class="form-control" id="branch">
+                  <option value="cse">CSE</option>
+                  <option value="it">IT</option>
+                  <option value="eee">EEE</option>
+                  <option value="ece">ECE</option>
+                  <option value="mechanical">MECHANICAL</option>
+                  <option value="biotech">BIOTECH</option>
+                </select>
+              </div>
+              
+              <button class="btn btn-primary" type= "button" id="go" style="margin-top:2%; margin-bottom: 2%; margin-left: 10%;">Go</button>
+            </div>
+            <h1 id="need"></h1>
+          
 
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
@@ -314,6 +338,49 @@
     <script src='js/jquery.dataTables.min.js'></script>
     <script src='js/dataTables.bootstrap4.min.js'></script>
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script>
+      $("#go").click(() => {
+
+      branch = document.getElementById("branch").value
+    
+      //var url="http://127.0.0.1:8080/students/agg"
+
+$.ajax({
+type: "post",
+url: "http://127.0.0.1:8080/students/agg",
+enctype: "multipart/form-data",
+contentType: false,
+processData: false,
+//data: JSON.stringify({branch:branch}),
+xhrFields: {
+withCredentials: false,
+},
+headers: {},
+success: function (res) {
+  x=0
+  for(i=0;i<res.length;i++)
+  {
+    if(branch==res[i]._id)
+    {
+      document.getElementById("need").innerHTML=`the stength of ${branch} is ${res[0].count}`;
+      x=1
+      break;
+    }
+  }
+  if(x==0)
+  {
+    document.getElementById("need").innerHTML=`the stength of ${branch} is 0`;
+  }
+
+
+
+},
+error: function () {
+console.log("We are sorry but our servers are having an issue right now");
+},
+});
+      })
+    </script>
     <script>
       $('#dataTable-1').DataTable(
       {
