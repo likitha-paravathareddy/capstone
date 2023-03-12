@@ -7,7 +7,7 @@ const resultSchema=mongoose.Schema({
     },
     semester:
     {
-        type:Number
+        type:String
     },
     subjectName:
     {

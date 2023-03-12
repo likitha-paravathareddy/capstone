@@ -18,6 +18,7 @@ async function resultRegistrationController(req,res){
                 console.log("saved")
                 res.send("sent");
             }).catch((err)=>{
+                console.log(err)
                 res.send(err);
             })
             
