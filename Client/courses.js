@@ -66,7 +66,8 @@ $("documnet").ready(async function () {
         for(i=0;i<data.length;i++)
         {
             course = data[i].courseName
-            //console.log(course)
+            console.log(course)
+        
             num = sub.indexOf(course)
            // console.log(colors[i])
             //console.log(data[0])
@@ -76,7 +77,6 @@ $("documnet").ready(async function () {
           if(num>=0)
           {
             
-            console.log(course)
             templateString = '<div class="col-md-4 col-sm-6 content-card">'+
             '<div class="card-big-shadow">'+
                 '<div class="card card-just-text" data-background="color" data-color='+
@@ -93,7 +93,7 @@ $("documnet").ready(async function () {
                         '<p class="description"><a href = "curriculum.html#'+
                         data[i].courseName+
                         '">'+
-                        data[i].curriculum[0].substring(0, 100)+
+                    
                         '</a></p>'+
                     '</div>'+
                 '</div>'+
@@ -102,6 +102,7 @@ $("documnet").ready(async function () {
         x++;
             
         $("#cards").append(templateString);
+        console.log(course)
           }
         }
     })
