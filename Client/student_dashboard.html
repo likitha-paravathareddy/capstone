@@ -24,6 +24,12 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <script>
+      function logout(){
+        localStorage.setItem("student",null)
+        localStorage.setItem("token",null)
+      }
+    </script>
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -61,6 +67,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="profile.html">Profile</a>
               <a class="dropdown-item" href="student_change_password.html">Settings</a>
+              <a class="dropdown-item" href="./firstpage/index.html" onclick="logout()">Logout</a>
              
             </div>
           </li>
