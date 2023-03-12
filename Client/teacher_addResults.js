@@ -4,15 +4,13 @@ var branch
 $("#go").click(function(){
   branch=document.getElementById("branch").value
   semester=document.getElementById("sem").value
-  alert(branch)
-  alert(semester)
+
   var url="http://127.0.0.1:8080/students/reg"
   $.get(url,function(data,status){
     for(let i=0;i<data.length;i++){
-      alert(data[i].branch,branch)
-      alert(data[i].semester,semester)
+
       if(data[i].branch==branch && data[i].semester==semester){
-        alert(data[i].studentId)
+    
         var temp=`<option value="${data[i].studentId}">${data[i].studentId}</option>`
         $("#student_id").append(temp)
       }
