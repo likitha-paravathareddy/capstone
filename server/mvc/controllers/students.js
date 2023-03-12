@@ -135,4 +135,32 @@ const loginUser = asyncHandler(async (req, res) => {
     }
   });
 
-module.exports={ studentRegistrationController , loginUser, studentDataFetching}
+
+  const changePassword = asyncHandler(async (req, res) => {
+    console.log(req.body)
+    const { studentId, old, new_pass } = req.body;
+    console.log(new_pass)
+    if (!old || !new_pass) {
+      res.status(400);
+      throw new Error("All fields are mandatory!");
+    }
+    const user = await studentModelCtrl.studentModel.findOne({ studentId });
+    console.log(user)
+    //compare password with hashedpassword
+    if (user && (await bcrypt.compare(old, user.password))) {
+      console.log(user.password)
+      const hashedPassword = await bcrypt.hash(new_pass, 10);
+      console.log(hashedPassword)
+      studentModelCtrl.studentModel.updateOne({ "studentId":studentId},{$set:{"password": hashedPassword }}).then(()=>{
+        console.log("hello")
+      })
+      console.log("fgsah")
+      res.send({"Message":"changed Successfully"});
+    } else {
+      res.status(401);
+      throw new Error("email or password is not valid");
+    }
+  });
+
+
+module.exports={ studentRegistrationController , loginUser, changePassword,studentDataFetching}
