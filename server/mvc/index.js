@@ -9,6 +9,17 @@ const nodemailer=require("nodemailer")
 app.use(cors())
 app.use(express.json());
 app.use(cors())
+const http = require('http');
+const socketio = require('socket.io');
+const formatMessage = require('./utils/messages').formatMessage;
+const { getCurrentUser, userJoin, userLeave, getRoomUsers } = require('./utils/users');
+
+const server = http.createServer(app);
+const io = socketio(server,{cors:{}});
+
+
+
+const botName = "CRM";
 
 app.get('/',(req,res)=>{
   res.send("Hello world")
@@ -183,7 +194,65 @@ const { validationResult } = require("express-validator");
 //     }
 // })
 
-app.listen(8080,() =>
-{
-    console.log("server listening at port 8080")
+io.on('connection', socket => {
+    
+  // console.log("New websocket connection");
+
+  socket.on('joinRoom', ({ username, room }) => {
+
+      const user = userJoin(socket.id, username, room)
+
+      socket.join(user.room);
+
+      // socket.emit("msg", formatMessage(botName, "sample message to check emit function of socket io!!!!"))//emitting to serve and client
+
+
+      //Broadcast when user connects
+      socket.broadcast.to(user.room).emit("msg", formatMessage(botName, `${user.username} has joined in the chat`));       //emitting to all the clients except sender
+
+      //send users and room info
+      io.to(user.room).emit('roomusers', {
+          room: user.room,
+          users: getRoomUsers(user.room)
+      })
+  })
+
+
+
+  socket.on("chatmsg", message => {
+
+      let user = getCurrentUser(socket.id);
+      io.to(user.room).emit("msg", formatMessage(user.username, message));
+  })
+
+
+  //Runs when user disconnects
+  socket.on("disconnect", () => {
+      const user = userLeave(socket.id);
+
+      if (user) {
+          io.to(user.room).emit("msg", formatMessage(botName, `${user.username} has left the chat`));      //emitting to all the users
+
+          //send users and room info
+          io.to(user.room).emit('roomusers', {
+              room: user.room,
+              users: getRoomUsers(user.room)
+          })
+      }
+
+
+  })
+
+
 })
+
+
+// app.use(express.static('public'))
+
+
+
+
+
+
+
+server.listen(8080, () => console.log("server listening on 8080 port"))

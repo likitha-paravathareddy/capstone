@@ -225,7 +225,7 @@ async function bookPurchaseData(req,res){
                 }).catch((err)=>{
                     res.send(err);
                 })
-                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{isbn:"purchased"}).then(()=>{
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{$set:{isbn:"purchased"}}).then(()=>{
                     res.send("sent");
                 }).catch((err)=>{
                     res.send(err);
@@ -250,7 +250,7 @@ async function getBookPurchaseData(req,res){
 }
 
 async function bookPayFine(req,res){
-    bookModelCtrl.bookModel.updateOne({user_id:req.body.user_id},{paidAt:Date.now()}).then(()=>{
+    bookModelCtrl.bookModel.updateOne({user_id:req.body.user_id},{$set:{paidAt:Date.now()}}).then(()=>{
         res.send("sent");
     }).catch((err)=>{
         res.send(err);
