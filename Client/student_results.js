@@ -23,7 +23,7 @@ $("#sub1").click(() => {
 
 
   $.get(
-    `http://localhost:8080/result/getResults/${rollNo}`,
+    `http://3.135.192.97/result/getResults/${rollNo}`,
     function (data) {
      console.log(data);
       for (i = 0; i < data.length; i++) {

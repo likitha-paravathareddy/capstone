@@ -22,7 +22,7 @@ logn.addEventListener("click", () => {
     };
       $.ajax({
         type: "post",
-        url: "http://localhost:8080/faculty/login",
+        url: "http://3.135.192.97/faculty/login",
         contentType: "application/json",
         data: JSON.stringify(data),
         xhrFields: {

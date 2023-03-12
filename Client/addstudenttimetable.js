@@ -50,7 +50,7 @@ $(document).ready(function(){
          });
   
          datatimes=JSON.stringify(datatimes)
-         var url="http://127.0.0.1:8080/stutimetables/reg"
+         var url="http://3.135.192.97/stutimetables/reg"
          $.post(url, datatimes, function (xhr, status, responseText) {
             console.log(responseText.responseText)
          })

@@ -31,7 +31,8 @@ register.addEventListener("click", () => {
         console.log(data)
           $.ajax({
             type: "post",
-            url: "http://localhost:8080/calenderEvents/reg",
+            url: "http://3.135.192.97/calenderEvents/reg",
+            //http://3.135.192.97/students/reg
             contentType: "application/json",
             data: JSON.stringify(data),
             xhrFields: {

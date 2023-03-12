@@ -10,7 +10,7 @@ $(document).ready(function(){
         branch=document.getElementById("feebranch").value
         semester=document.getElementById("feesemester").value
         name=JSON.parse(localStorage.getItem("student")).name
-        var url="http://127.0.0.1:8080/payments/reg"
+        var url="http://3.135.192.97/payments/reg"
 
 
         $.get(url,function(data,status){
@@ -54,7 +54,7 @@ $(document).ready(function(){
        
             dat=JSON.stringify(dat)
          
-            var url="http://127.0.0.1:8080/mypayments/reg"
+            var url="http://3.135.192.97/mypayments/reg"
             $.ajaxSetup({
                 headers: {
                    'Content-Type': 'application/json',

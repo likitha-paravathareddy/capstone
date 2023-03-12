@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url="http://127.0.0.1:8080/books/getborrow"
+    var url="http://3.135.192.97/books/getborrow"
     $.get(url,function(data,status){
         for(let i=0;i<data.length;i++){
             
@@ -25,7 +25,7 @@ function borrow(book_name){
     }
     dat15=JSON.stringify(dat15)
     alert(dat15)
-    var url="http://127.0.0.1:8080/books/return"
+    var url="http://3.135.192.97/books/return"
     $.ajaxSetup({
         headers: {
            'Content-Type': 'application/json',

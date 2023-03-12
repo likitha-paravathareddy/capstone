@@ -4,7 +4,7 @@ $(document).ready(function(){
         var semester=document.getElementById("semester").value;
         document.getElementById("headb").innerHTML=branch.toUpperCase(),
         document.getElementById("semb").innerHTML=semester.toUpperCase()
-        var url = 'http://127.0.0.1:8080/stutimetables/reg';
+        var url = 'http://3.135.192.97/stutimetables/reg';
     
     
       await $.get(url,function(data,status){
@@ -62,7 +62,7 @@ $(document).ready(function(){
 
       });
       var arr=[]
-      var urlse='http://127.0.0.1:8080/department/reg'
+      var urlse='http://3.135.192.97/department/reg'
       await $.get(urlse,function(data1,status){
         for(let i=0;i<data1.length;i++){
             if(data1[i].departmentName==branch)
@@ -74,7 +74,7 @@ $(document).ready(function(){
         }
       })
       console.log(arr)
-      var urls='http://127.0.0.1:8080/courses/reg'
+      var urls='http://3.135.192.97/courses/reg'
       await $.get(urls,function(data2,status){
         for(let i=0;i<arr.length;i++)
         {

@@ -24,7 +24,7 @@ register.addEventListener("click", () => {
         };
           $.ajax({
             type: "post",
-            url: "http://localhost:8080/students/reg",
+            url: "http://3.135.192.97/students/reg",
             contentType: "application/json",
             data: JSON.stringify(data),
             xhrFields: {

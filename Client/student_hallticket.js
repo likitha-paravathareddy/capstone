@@ -8,7 +8,7 @@ $(document).ready(async function(){
     
 
     dues=[]
-      await $.get("http://localhost:8080/payments/reg",function(data1,status){
+      await $.get("http://3.135.192.97/payments/reg",function(data1,status){
             //console.log(data1[0].paid)
             //console.log("heli")
             for(i=0;i<data1.length;i++)
@@ -40,7 +40,7 @@ $(document).ready(async function(){
                 <td><b>Sem: </b>${semester}</td>
               </tr>`;
 
-              $.get("http://localhost:8080/profile/reg",function(data2,status){
+              $.get("http://3.135.192.97/profile/reg",function(data2,status){
 
               for(i=0;i<data2.length;i++)
               {
@@ -60,7 +60,7 @@ $(document).ready(async function(){
 
               })
 
-              $.get("http://localhost:8080/hallticket/reg",function(data,status){
+              $.get("http://3.135.192.97/hallticket/reg",function(data,status){
                 for(i=0;i<data.length;i++)
                 {
                     console.log(data[i].branch)

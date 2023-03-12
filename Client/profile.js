@@ -12,7 +12,7 @@ $(document).ready(function(){
   document.getElementById("dept").innerHTML=department
   document.getElementById("email").innerHTML=email
   document.getElementById("nametop").innerHTML=name
-  var urlse="http://127.0.0.1:8080/profile/find"
+  var urlse="http://3.135.192.97/profile/find"
   dat123={email:email}
   dat123=JSON.stringify(dat123)
   $.ajaxSetup({
@@ -56,7 +56,7 @@ $(document).ready(function(){
     // alert(img.files[0])
     $.ajax({
       type: "post",
-      url: "http://localhost:8080/profile/upload",
+      url: "http://3.135.192.97/profile/upload",
       enctype: "multipart/form-data",
       contentType: false,
       processData: false,
@@ -95,7 +95,7 @@ $(document).ready(function(){
     }
 
     dat12=JSON.stringify(dat12)
-    var url="http://127.0.0.1:8080/profile/reg"
+    var url="http://3.135.192.97/profile/reg"
     $.ajaxSetup({
       headers: {
          'Content-Type': 'application/json',
