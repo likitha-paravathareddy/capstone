@@ -32,7 +32,7 @@ logn.addEventListener("click", () => {
         success: function (res) {
             console.log("hello")
             console.log(res.faculty)
-          localStorage.setItem("faculty", JSON.stringify(res.faculty.facultyName));
+          localStorage.setItem("faculty", res.faculty.facultyName);
            // localStorage.setItem("token", res.token);
            window.open("faculty_dashboard.html")
         },
