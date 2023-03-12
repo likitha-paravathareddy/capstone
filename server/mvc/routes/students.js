@@ -4,7 +4,7 @@ const routes= express.Router()
 const cors=require("cors")
 routes.use(cors())
 app.use(cors())
-
+const validateToken = require("../middleWares/validateToken");
 const studentDetail = require('../controllers/students')
 
 routes.post('/reg', studentDetail.studentRegistrationController)
