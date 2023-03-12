@@ -124,6 +124,7 @@ const nodemailer=require("nodemailer")
 
 
   const loginFaculty = asyncHandler(async (req, res) => {
+    console.log(req.body)
     const { facultyId, password } = req.body;
     if (!facultyId || !password) {
       res.status(400);
