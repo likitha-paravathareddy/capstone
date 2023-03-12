@@ -10,7 +10,7 @@ username=name.split('#')[0]
 room = name.split('#')[1]
 
 
-const socket = io('http://localhost:8080');
+const socket = io('http://3.135.192.97');
 
 //Join chatroom
 socket.emit('joinRoom',{username,room})
