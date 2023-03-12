@@ -24,6 +24,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -113,6 +114,22 @@
                 </a>
               </li>
 
+              <li class="nav-item w-100">
+                <a class="nav-link" href="addbooks.html">
+                    <i class="fe fe-box fe-16"></i>
+                  <span class="ml-3 item-text">Add books</span>
+                 
+                </a>
+              </li>
+
+              <li class="nav-item w-100">
+                <a class="nav-link" href="calendar.html">
+                    <i class="fe fe-credit-card fe-16"></i>
+                  <span class="ml-3 item-text">Calendar</span>
+                  
+                </a>
+              </li>
+
             
 
               <li class="nav-item w-100">
@@ -123,12 +140,20 @@
                 </a>
 
                 <li class="nav-item dropdown">
-                    <a href="#profile" data-toggle="collapse" aria-expanded="false" class="nav-link w-100">
+                    <a href="admin_payment.html" data-toggle="collapse" aria-expanded="false" class="nav-link w-100">
                         <i class="fe fe-layout fe-16"></i>
                       <span class="ml-3 item-text">Payments</span>
                     </a>
                   
                   </li>
+              </li>
+
+              <li class="nav-item w-100">
+                <a class="nav-link" href="faculty_addtimings.html">
+                    <i class="fe fe-credit-card fe-16"></i>
+                  <span class="ml-3 item-text">Add timings</span>
+                  
+                </a>
               </li>
 
            
@@ -149,6 +174,26 @@
               <div class="row align-items-center mb-2">
                 <div class="col">
                   <h2 class="h5 page-title">Welcome!</h2>
+                  <br>
+                  <br>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="card">
+                          <h3 class="card-title"><a href="admin_view_users.html">Users</a></h3>
+                          <h4 class="card-text" id="text1"></h4>
+                          <a href="admin_view_users.html" class="btn btn-primary">More</a>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card">
+                          <h3 class="card-title"><a href="admin_view_faculty.html">faculty</a></h3>
+                          <h4 class="card-text"id = "text2"></h4>
+                          <a href="admin_view_faculty.html" class="btn btn-primary">More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   
                 </div>
                
@@ -315,6 +360,10 @@
     <script src='js/dropzone.min.js'></script>
     <script src='js/uppy.min.js'></script>
     <script src='js/quill.min.js'></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
     <script>
       $('.select2').select2(
       {
@@ -494,6 +543,60 @@
           });
         }, false);
       })();
+    </script>
+    <script>
+
+      $.ajax({
+type: "post",
+url: "http://127.0.0.1:8080/students/total",
+enctype: "multipart/form-data",
+contentType: false,
+processData: false,
+//data: JSON.stringify({branch:branch}),
+xhrFields: {
+withCredentials: false,
+},
+headers: {},
+success: function (res) {
+  console.log(res[0].total)
+ 
+      document.getElementById("text1").innerHTML=`the number of users are ${res[0].total}`;
+    
+ 
+
+
+},
+error: function () {
+console.log("We are sorry but our servers are having an issue right now");
+},
+});
+
+
+$.ajax({
+type: "post",
+url: "http://127.0.0.1:8080/faculty/total",
+enctype: "multipart/form-data",
+contentType: false,
+processData: false,
+//data: JSON.stringify({branch:branch}),
+xhrFields: {
+withCredentials: false,
+},
+headers: {},
+success: function (res) {
+  console.log(res[0].total)
+ 
+      document.getElementById("text2").innerHTML=`the number of faculties are ${res[0].total}`;
+    
+ 
+
+
+},
+error: function () {
+console.log("We are sorry but our servers are having an issue right now");
+},
+});
+      
     </script>
     <script>
       var uptarg = document.getElementById('drag-drop-area');

@@ -157,4 +157,20 @@ const nodemailer=require("nodemailer")
 
 }
 
-  module.exports = { registerFaculty, loginFaculty ,getFaculty};
+
+async function totalFaculty(req,res){
+  //branch = req.body.branch
+  //console.log(branch)
+    Faculty.aggregate([{$count:"total"}],(err,docs)=>{
+      if(err){
+          res.send("Something went wrong!");
+      }
+      else{
+        console.log(docs[0].total)
+          res.send(docs)
+      }
+  })
+
+}
+
+  module.exports = { registerFaculty, loginFaculty ,getFaculty,totalFaculty};

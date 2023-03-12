@@ -12,5 +12,6 @@ routes.get('/reg', studentDetail.studentDataFetching)
 routes.post('/agg', studentDetail.countStudents)
 routes.post("/login", studentDetail.loginUser);
 routes.post("/change", studentDetail.changePassword);
+routes.post("/total", studentDetail.countTotalStudents);
 
 module.exports = routes
