@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url="http://127.0.0.1:8080/payments/reg"
+    var url="http://3.135.192.97/payments/reg"
     $.get(url,function(data,status){
         console.log(data)
         for(let i=0;i<data.length;i++){

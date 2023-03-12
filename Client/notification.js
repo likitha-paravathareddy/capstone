@@ -3,7 +3,7 @@ $("documnet").ready(async function () {
 
 studentId = JSON.parse(localStorage.getItem("student")).studentId
 dues=[]
-await $.get("http://localhost:8080/payments/reg",function(data1,status){
+await $.get("http://3.135.192.97/payments/reg",function(data1,status){
       //console.log(data1[0].paid)
       //console.log("heli")
       for(i=0;i<data1.length;i++)
@@ -20,7 +20,7 @@ await $.get("http://localhost:8080/payments/reg",function(data1,status){
     })
   
     console.log(dues)
-$.get("http://localhost:8080/announce/reg",function(data,status){
+$.get("http://3.135.192.97/announce/reg",function(data,status){
  console.log(data)
 
 

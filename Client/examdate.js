@@ -17,7 +17,7 @@ $("#go").click(() => {
         }
     });
     //console.log(branch)
-    $.get(`http://localhost:8080/department/reg`,function (data) {
+    $.get(`http://3.135.192.97/department/reg`,function (data) {
         console.log(data)
 
             for(i=0;i<data.length;i++)
@@ -77,7 +77,7 @@ $("#go").click(() => {
         }
      
         dat18=JSON.stringify(dat18)
-        var url="http://127.0.0.1:8080/hallticket/reg"
+        var url="http://3.135.192.97/hallticket/reg"
         $.ajaxSetup({
             headers: {
                'Content-Type': 'application/json',

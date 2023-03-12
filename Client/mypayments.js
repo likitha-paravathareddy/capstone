@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url="http://127.0.0.1:8080/payments/reg"
+    var url="http://3.135.192.97/payments/reg"
     var name=JSON.parse(localStorage.getItem("student")).name
     $.get(url,function(data,status){
         for(let i=0;i<data.length;i++){
@@ -14,7 +14,7 @@ $(document).ready(function(){
 
         }
     })
-    var urls="http://127.0.0.1:8080/mypayments/reg"
+    var urls="http://3.135.192.97/mypayments/reg"
     $.get(urls,function(data,status){
         console.log(data)
         for(let i=0;i<data.length;i++){

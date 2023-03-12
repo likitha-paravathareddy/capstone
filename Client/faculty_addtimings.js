@@ -16,7 +16,7 @@ $(document).ready(function(){
             start:arr
         }
         data21=JSON.stringify(data21)
-        var url="http://127.0.0.1:8080/data/reg"
+        var url="http://3.135.192.97/data/reg"
         $.ajaxSetup({
             headers: {
                'Content-Type': 'application/json',

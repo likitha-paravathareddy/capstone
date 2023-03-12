@@ -11,7 +11,7 @@ $("documnet").ready(async function () {
 
 
     var sub
-    await $.get("http://localhost:8080/department/reg", function (data) {
+    await $.get("http://3.135.192.97/department/reg", function (data) {
         
         //console.log(data)
         //console.log("hey")
@@ -56,7 +56,7 @@ $("documnet").ready(async function () {
       console.log("ghsaku")
       console.log(sub)
      // card = document.getElementById("cards")
-      await $.get("http://localhost:8080/courses/reg", function (data) {
+      await $.get("http://3.135.192.97/courses/reg", function (data) {
         
         //console.log(data)
         //console.log("hey")

@@ -12,7 +12,7 @@ console.log(subject)
 cou = document.getElementById("cou");
 //console.log(cou)
 
-$.get("http://localhost:8080/courses/reg", function(data,status){
+$.get("http://3.135.192.97/courses/reg", function(data,status){
 
  
   for(i=0;i<data.length;i++)

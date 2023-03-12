@@ -2,7 +2,7 @@ $(document).ready(()=>{
     $("#go").click(()=>{
         sem = $("#sem").val();
         console.log("hello")
-        $.get("http://localhost:8080/calendar/reg", function (data)
+        $.get("http://3.135.192.97/calendar/reg", function (data)
         {
             console.log(data)
             for(i = 0; i < data.length; i++)

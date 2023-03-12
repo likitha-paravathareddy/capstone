@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url="http://127.0.0.1:8080/attendance/reg"
+    var url="http://3.135.192.97/attendance/reg"
     $.get(url,function(data,status){
         var total=0
         var present=0

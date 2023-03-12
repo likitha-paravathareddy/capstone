@@ -77,7 +77,7 @@ $(document).ready(function(){
          });
   
          datatimer=JSON.stringify(datatimer)
-         var url="http://127.0.0.1:8080/teachtimetables/reg"
+         var url="http://3.135.192.97/teachtimetables/reg"
          $.post(url, datatimer, function (xhr, status, responseText) {
             console.log(responseText.responseText)
          })

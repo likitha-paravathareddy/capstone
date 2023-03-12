@@ -5,8 +5,8 @@ $(document).ready(function(){
         var branch=document.getElementById("dept").value
         var semester=document.getElementById("sem").value
         date=document.getElementById("date").value
-        var url="http://127.0.0.1:8080/students/reg"
-        $.get("http://127.0.0.1:8080/data/reg",function(data,status){
+        var url="http://3.135.192.97/students/reg"
+        $.get("http://3.135.192.97/data/reg",function(data,status){
             for(let i=0;i<data.length;i++){
                 if(branch==data[i].branch && semester==data[i].semester)
                 {
@@ -38,7 +38,7 @@ $(document).ready(function(){
     })
     $("#post").click(function(){
         
-        $.get("http://127.0.0.1:8080/students/reg",function(data,status){
+        $.get("http://3.135.192.97/students/reg",function(data,status){
             for(let i=0;i<data.length;i++){
                 var bools=[]
                 for(let j=0;j<number;j++){
@@ -54,7 +54,7 @@ $(document).ready(function(){
                     sub:sub
                 }
                 data23=JSON.stringify(data23)
-                var url="http://127.0.0.1:8080/attendance/reg"
+                var url="http://3.135.192.97/attendance/reg"
         $.ajaxSetup({
             headers: {
                'Content-Type': 'application/json',

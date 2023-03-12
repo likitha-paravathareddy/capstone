@@ -5,7 +5,7 @@ $("#go").click(function(){
   branch=document.getElementById("branch").value
   semester=document.getElementById("sem").value
 
-  var url="http://127.0.0.1:8080/students/reg"
+  var url="http://3.135.192.97/students/reg"
   $.get(url,function(data,status){
     for(let i=0;i<data.length;i++){
 
@@ -48,7 +48,7 @@ que.addEventListener("click", () => {
   // });
   $.ajax({
     type: "post",
-    url: "http://localhost:8080/result/postResults",
+    url: "http://3.135.192.97/result/postResults",
     contentType: "application/json",
     data: JSON.stringify(data),
     xhrFields: {

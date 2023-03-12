@@ -12,7 +12,7 @@ $(document).ready(function(){
 
         name=JSON.parse(localStorage.getItem("student")).name
        
-        var url="http://127.0.0.1:8080/payments/reg"
+        var url="http://3.135.192.97/payments/reg"
         $.get(url,function(data,status){
             for(let i=0;i<data.length;i++)
             {
@@ -23,7 +23,7 @@ $(document).ready(function(){
                         alert("You have fee dues to clear please clear them to register for exams")
                     }
                     else{
-                        var urls="http://127.0.0.1:8080/exams/reg"
+                        var urls="http://3.135.192.97/exams/reg"
                         $.get(urls,function(data,status){
                             for(let j=0;j<data.length;j++)
                             {
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
                 }
                 data12=JSON.stringify(data12)
-                var url="http://127.0.0.1:8080/exampayments/reg"
+                var url="http://3.135.192.97/exampayments/reg"
                 $.ajaxSetup({
                     headers: {
                        'Content-Type': 'application/json',

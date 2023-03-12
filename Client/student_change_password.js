@@ -25,7 +25,7 @@ reset.addEventListener("click", () => {
         };
           $.ajax({
             type: "post",
-            url: "http://localhost:8080/students/change",
+            url: "http://3.135.192.97/students/change",
             contentType: "application/json",
             data: JSON.stringify(data),
             xhrFields: {

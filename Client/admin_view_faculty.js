@@ -2,7 +2,7 @@ $(document).ready(function(){
     console.log("he")
 
    // $.get("http://localhost:8080/courses/reg", function(data){
-    var url="http://127.0.0.1:8080/faculty/reg"
+    var url="http://3.135.192.97/faculty/reg"
     $.get(url,function(data){
       console.log("hello")
         console.log(data)

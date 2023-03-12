@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url="http://127.0.0.1:8080/teachtimetables/reg"
+    var url="http://3.135.192.97/teachtimetables/reg"
     var faculty=localStorage.getItem("faculty")
     $.get(url,function(data,err){
         for(let i=0;i<data.length;i++)

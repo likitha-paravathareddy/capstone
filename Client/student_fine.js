@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url="http://127.0.0.1:8080/books/payfine"
+    var url="http://3.135.192.97/books/payfine"
     $.get(url,function(data,status){
         for(let i=0;i<data.length;i++){
             
@@ -23,7 +23,7 @@ function borrow(book_name){
     }
     dat16=JSON.stringify(dat16)
     alert(dat16)
-    var url="http://127.0.0.1:8080/books/payfine"
+    var url="http://3.135.192.97/books/payfine"
     $.ajaxSetup({
         headers: {
            'Content-Type': 'application/json',
