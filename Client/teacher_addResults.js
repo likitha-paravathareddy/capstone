@@ -1,8 +1,28 @@
 const que = document.getElementById("submit");
+var semester
+var branch
+$("#go").click(function(){
+  branch=document.getElementById("branch").value
+  semester=document.getElementById("sem").value
+  alert(branch)
+  alert(semester)
+  var url="http://127.0.0.1:8080/students/reg"
+  $.get(url,function(data,status){
+    for(let i=0;i<data.length;i++){
+      alert(data[i].branch,branch)
+      alert(data[i].semester,semester)
+      if(data[i].branch==branch && data[i].semester==semester){
+        alert(data[i].studentId)
+        var temp=`<option value="${data[i].studentId}">${data[i].studentId}</option>`
+        $("#student_id").append(temp)
+      }
+    }
+  })
+  document.getElementById("form").style.display="block"
+})
 que.addEventListener("click", () => {
     console.log("hello")
   studentId = document.getElementById("student_id").value;
-  semester = document.getElementById("sem").value;
   subjectName = document.getElementById("subject").value;
   marks = document.getElementById("marks").value;
   percentage =  marks;
@@ -22,7 +42,7 @@ que.addEventListener("click", () => {
     grade:grade
   };
   obj1 = JSON.stringify(data);
-
+ 
   // $.post("http://localhost:3008/queries/res",data,
   // function(result)
   // {

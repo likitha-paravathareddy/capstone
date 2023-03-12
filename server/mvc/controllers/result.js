@@ -11,10 +11,11 @@ async function resultRegistrationController(req,res){
         marks:req.body.marks,
         percentage: req.body.percentage
     })
-    // console.log(result_data)
+    console.log(resultData)
    
         
             resultData.save().then(()=>{
+                console.log("saved")
                 res.send("sent");
             }).catch((err)=>{
                 res.send(err);
