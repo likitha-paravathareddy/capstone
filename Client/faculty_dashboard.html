@@ -24,7 +24,11 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function logoutfac(){
+        localStorage.setItem("faculty",null)
+      }
+    </script>
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -61,7 +65,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Profile</a>
               <a class="dropdown-item" href="#">Settings</a>
-              <a class="dropdown-item" href="#">Activities</a>
+              <a class="dropdown-item" onclick="logoutfac()" href="./firstpage/index.html">Logout</a>
             </div>
           </li>
         </ul>
