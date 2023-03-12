@@ -144,7 +144,7 @@ const nodemailer=require("nodemailer")
         process.env.ACCESS_TOKEN_SECERT,
         { expiresIn: "15m" }
       );
-      res.status(200).json({ accessToken });
+      res.send({ faculty:faculty, accessToken:accessToken });
     } else {
       res.status(401);
       throw new Error("email or password is not valid");
