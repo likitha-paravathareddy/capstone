@@ -8,7 +8,7 @@ $(document).ready(function(){
     // alert(img.files[0])
     $.ajax({
       type: "post",
-      url: "http://localhost:8080/books/update",
+      url: "http://3.135.192.97/books/update",
       enctype: "multipart/form-data",
       contentType: false,
       processData: false,
@@ -38,7 +38,7 @@ $(document).ready(function(){
     }
 
     dat13=JSON.stringify(dat13)
-    var url="http://127.0.0.1:8080/books/reg"
+    var url="http://3.135.192.97/books/reg"
     $.ajaxSetup({
       headers: {
          'Content-Type': 'application/json',
