@@ -4,7 +4,7 @@ const cors = require("cors");
 const fs = require("fs");
 const errorHandler = require("./middleWares/errorHandler");
 const path=require('path')
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config({path:__dirname+'/.env'});
 const nodemailer=require("nodemailer")
 app.use(cors())
 app.use(express.json());
