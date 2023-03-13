@@ -4,7 +4,11 @@ $(document).ready(async function(){
     name1 = JSON.parse(localStorage.getItem("student")).name;
     branch = JSON.parse(localStorage.getItem("student")).branch;
     semester = JSON.parse(localStorage.getItem("student")).semester;
-
+    $.ajaxSetup({
+      beforeSend: function(xhr) {
+          xhr.setRequestHeader('Authorization','Bearer '+localStorage.getItem('token'));
+      }
+  });
     
 
     dues=[]
