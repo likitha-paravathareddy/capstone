@@ -3,7 +3,9 @@
 
 Capstone project to make a sophisticated SaaS Product for a college.
 
+## Deployment Link
 
+http://52.14.191.84/capstone/Client/firstpage/index.html
 
 ## Authors
 
@@ -103,6 +105,11 @@ Start the server
 - Used websockets
 - Teachers can chat with students using this function
 - Individual chat rooms are created using socket.io library
+
+#### 12. Login/Signup Page
+- 2 kinds of login pages: Faculty and Student
+- when you register using your email id an email is sent to that email id using nodemailer along with userid and password to login
+- JWT Authorisation is done in login page
 
 
 
