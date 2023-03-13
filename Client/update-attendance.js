@@ -65,7 +65,7 @@ $(document).ready(function(){
             }
          });
         $.post(url, data23, function (xhr, status, responseText) {
-            alert(responseText.responseText)
+            // alert(responseText.responseText)
         })
             }
         })
