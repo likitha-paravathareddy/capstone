@@ -24,7 +24,7 @@ $(document).ready(async function(){
           }
           })
 
-          if(dues.indexOf(rollNo)<0)
+          if(dues.indexOf(rollNo)>=0)
           {
             document.getElementById("notpaid").innerHTML = '<H1 style="color:red">CLEAR YOUR DUES TO VIEW  HALLTICKET</H1>'
           }
