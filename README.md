@@ -68,7 +68,46 @@ Start the server
 - An editable form to fill other details is present
 - Student can also update their profile picture using multer library
 
-#### 5. 
+#### 5. Library Management
+- A library management section is present
+- Students can view the books in the library
+- Students can borrow and return the books
+- Fine is calculated from date of return when date of return is not met and displayed on the home page for students
+- On the admin side books can be added to the library which is stored using s3 buckets and MongoDB
+
+#### 6. Hall Ticket Generation
+- Students can view and download exam halltickets from the website
+- Hall tickets will only be shown once exam fee is paid
+- Hall tickets display the dates of exams
+
+#### 7. Results
+- Available on student and faculty side
+- Students can view semesterwise results
+- Faculty can update semesterwise and subjectwise results
+
+#### 8. Timetables
+- Students can select their semester and department from the timetables page and render their class timetables
+- timetables contain class timings
+- list of faculty along with the subjects they teach is also present
+- Timetables are also downloadable
+
+#### 9. Courses
+- Displays all the courses in the given semester for the student
+
+#### 10. Payments
+- 2 types of payments exist: Exam and College fee
+- you can also view your previous transactions in the my payments tab
+
+#### 11. Notifications
+- Admin can send notifications which will be broadcast to all or specific users
+- The notifications can be for lack of fee payment, less attendance etc.
+
+#### 12. Chat Function
+- Used websockets
+- Teachers can chat with students using this function
+- Individual chat rooms are created using socket.io library
+
+
 
 ## Tech Stack
 
