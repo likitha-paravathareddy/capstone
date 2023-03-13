@@ -64,7 +64,7 @@ $(document).ready(function(){
              $.post(url, dat, function (xhr, status, responseText) {
                 alert(responseText.responseText)
              });
-            var urls="http://127.0.0.1:8080/payments/update"
+            var urls="http://3.135.192.97/payments/update"
             $.ajaxSetup({
                 headers: {
                    'Content-Type': 'application/json',

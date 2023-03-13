@@ -11,6 +11,7 @@ $(document).ready(function(){
                 if(branch==data[i].branch && semester==data[i].semester)
                 {
                     number=data[i].numberOfPeriods
+                //    alert(number)
                 }
             }
         })
@@ -20,9 +21,11 @@ $(document).ready(function(){
                 <td>${data[i].name}</td>
                 <td>${data[i].studentId}</td>`
                 var temp=``
+                console.log(number)
                 for(let j=0;j<number;j++){
                     temp=temp+
                 `<td><input class="form-check-input" type="checkbox" value="" id="${data[i].studentId}${j+1}"></td>`
+                console.log(temp)
                 }
                 template=template+temp+`</tr>`
                 console.log(template)
