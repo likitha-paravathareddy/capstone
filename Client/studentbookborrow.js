@@ -17,14 +17,14 @@ $(document).ready(function(){
 function borrow(book_name){
 
     var id=JSON.parse(localStorage.getItem("student")).studentId
-    alert(id)
+    // alert(id)
     dat15={
         user_id:id,
         book_name:book_name,
         returnedDate:Date.now()
     }
     dat15=JSON.stringify(dat15)
-    alert(dat15)
+    // alert(dat15)
     var url="http://3.135.192.97/books/return"
     $.ajaxSetup({
         headers: {
@@ -33,6 +33,6 @@ function borrow(book_name){
         }
      });
      $.post(url, dat15, function (xhr, status, responseText){
-        alert(responseText.responseText)
+        // alert(responseText.responseText)
      })
 }

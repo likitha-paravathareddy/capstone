@@ -167,7 +167,7 @@ async function bookReturnData(req,res){
                 }).catch((err)=>{
                     res.send(err);
                 })
-                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{quantity:quantity+1}).then(()=>{
+                bookModelCtrl.bookModel.updateOne({book_name:req.body.book_name},{book_name:req.body.book_name}).then(()=>{
                     res.send("sent");
                 }).catch((err)=>{
                     res.send(err);
